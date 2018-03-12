@@ -18,7 +18,9 @@ class V:
     HTML = 'HTML'
 
 class N:
-    """Docstring for Common. """
+    """Docstring for Common.
+
+    """
     NAME = 'NAME'
     DETAILS = 'DETAILS'
     URL = 'URL'
@@ -48,6 +50,7 @@ class N:
 
 class F(Flags):
     """
+
     """
     NONE = FlagConstant()
     SUCCESS = FlagConstant()
@@ -65,6 +68,7 @@ class F(Flags):
 
 class v_GC:
     """Docstring for GenericConstants.
+
     """
     def __init__(self):
         pass
@@ -81,12 +85,14 @@ class ClearValue:
 
 class v_CONF(object):
     """Base class for value based constants
+
     """
 
     __single_v_conf = None
 
     def __new__(cls, *args, **kwargs):
         """
+
         """
         if cls != type(cls.__single_v_conf):
             cls.__single_v_conf = object.__new__(cls, *args, **kwargs)
@@ -95,6 +101,7 @@ class v_CONF(object):
     def __init__(self):
         """
         Default constructor
+
         """
         self.CONFIG_FILE = None
         self.__current_module_path = os\
@@ -111,6 +118,7 @@ class v_CONF(object):
 
     def get(self, section, option):
         """Returns an option value from a section
+
         """
         if self.CONFIG.has_section(section):
             _val = self.CONFIG.get(section, option)
@@ -120,6 +128,7 @@ class v_CONF(object):
 
 class HC:
     """Constants for Hooks
+
     """
     __CONFIG_SECTION_KEY = 'hooks_section'
     __DB_URI_KEY = 'db_uri'
@@ -139,6 +148,7 @@ class HC:
 
 class v_SC:
     """Constants defined to be used by DefaultSourceDriver
+
     """
     __CONFIG_SECTION_KEY = 'source_section'
     __DB_URI_KEY = 'db_uri'
@@ -161,6 +171,7 @@ class v_SC:
 
 class v_FSC:
     """Constants defined to be used by FileSystemDriver
+
     """
     __CONFIG_SECTION_KEY = 'file_system_section'
     __DB_URI_KEY = 'db_uri'
@@ -183,6 +194,7 @@ class v_FSC:
 
 class v_PC:
     """Constants defined to be used by Package related files
+
     """
     __CONFIG_SECTION_KEY = 'package_section'
     __ALLOWED_SCRIPT_EXT_KEY = 'allowed_setup_script_ext'

@@ -12,6 +12,7 @@ from typing import Type
 
 class Web(object):
     """Provides session for accessing web resources
+
     """
 
     __single_web_session = None
@@ -19,6 +20,7 @@ class Web(object):
 
     def __new__(cls, loop):
         """Class instance creator
+
         """
         if cls != type(cls.__single_web_session):
             cls.__single_web_session = object.__new__(cls)
@@ -28,11 +30,13 @@ class Web(object):
 
     #def __init__(self, loop: asyncio.unix_events.SelectorEventLoop = None):
         """Web session instance creator
+
         """
         #self._SESSION = aiohttp.ClientSession(loop=loop)
 
     #@property
     #def SESSION(self):
         """A single instance web session property
+
         """
        # return self._SESSION

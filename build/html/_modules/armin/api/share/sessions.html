@@ -173,6 +173,7 @@
 
 <div class="viewcode-block" id="Web"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.sessions.Web">[docs]</a><span class="k">class</span> <span class="nc">Web</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Provides session for accessing web resources</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__single_web_session</span> <span class="o">=</span> <span class="kc">None</span>
@@ -180,6 +181,7 @@
 
     <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">loop</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Class instance creator</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">cls</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__single_web_session</span><span class="p">):</span>
             <span class="bp">cls</span><span class="o">.</span><span class="n">__single_web_session</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
@@ -189,13 +191,15 @@
 
     <span class="c1">#def __init__(self, loop: asyncio.unix_events.SelectorEventLoop = None):</span>
         <span class="sd">&quot;&quot;&quot;Web session instance creator</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1">#self._SESSION = aiohttp.ClientSession(loop=loop)</span>
 
     <span class="c1">#@property</span>
     <span class="c1">#def SESSION(self):</span>
         <span class="sd">&quot;&quot;&quot;A single instance web session property</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+</div>
+<span class="sd">        &quot;&quot;&quot;</span>
        <span class="c1"># return self._SESSION</span>
 </pre></div>
 

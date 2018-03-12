@@ -185,13 +185,13 @@
 
 <div class="viewcode-block" id="AbstractHook.run_pre_callbacks"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractHook.run_pre_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_pre_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractHook.run_post_callbacks"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractHook.run_post_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_post_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div></div>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+        <span class="k">pass</span>
 
 
 <div class="viewcode-block" id="AbstractWrapper"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractWrapper">[docs]</a><span class="k">class</span> <span class="nc">AbstractWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -215,8 +215,8 @@
 <span class="sd">            &quot;&quot;&quot;</span>
             <span class="n">decorator</span><span class="o">.</span><span class="n">run_pre_callbacks</span><span class="p">()</span>
             <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="n">decorator</span><span class="o">.</span><span class="n">run_post_callbacks</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">wrapped_func</span></div></div>
+            <span class="n">decorator</span><span class="o">.</span><span class="n">run_post_callbacks</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="n">wrapped_func</span>
 </pre></div>
 
            </div>

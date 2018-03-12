@@ -205,14 +205,14 @@
         <span class="k">if</span> <span class="n">v_FSC</span><span class="o">.</span><span class="n">ENTRY_POINT_NAMESPACE</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_entry_point_namespace</span> <span class="o">=</span> <span class="n">v_FSC</span><span class="o">.</span><span class="n">ENTRY_POINT_NAMESPACE</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s1">&#39;Entry point name space is required. Check configuration&#39;</span><span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span></div>
+                <span class="s1">&#39;Entry point name space is required. Check configuration&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="FileSystemManager.get_invoke_args"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the arguments required by FileSystemManager</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">)</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">)</span>
 
 <div class="viewcode-block" id="FileSystemManager.create_file"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.create_file">[docs]</a>    <span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -233,8 +233,8 @@
             <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">driver</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div>
+        <span class="k">else</span><span class="p">:</span></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
 <div class="viewcode-block" id="FileSystemManager.create_directory"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.create_directory">[docs]</a>    <span class="k">def</span> <span class="nf">create_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new dir using the information provided as args</span>
@@ -251,8 +251,8 @@
             <span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">driver</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div>
+        <span class="k">else</span><span class="p">:</span></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
 <div class="viewcode-block" id="FileSystemManager.open_file"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.open_file">[docs]</a>    <span class="k">def</span> <span class="nf">open_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Opens an existing file using the information provided as args</span>
@@ -270,8 +270,8 @@
             <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">driver</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div>
+        <span class="k">else</span><span class="p">:</span></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
 <div class="viewcode-block" id="FileSystemManager.open_directory"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.open_directory">[docs]</a>    <span class="k">def</span> <span class="nf">open_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new dir using the information provided as args</span>
@@ -287,8 +287,8 @@
             <span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">driver</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div></div>
+        <span class="k">else</span><span class="p">:</span></div></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 </pre></div>
 
            </div>

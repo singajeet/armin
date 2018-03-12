@@ -2,6 +2,7 @@
 .. module:: source_driver
    :platform: Unix, Windows
    :synopsis: A default implementation of source system driver
+.. moduleauthor:: Ajeet Singh
 """
 from typing import Type, Dict, Any
 import pathlib
@@ -11,6 +12,7 @@ from tinydb import TinyDB, Query
 
 def get_meta_table(meta_repo_details:Type[Dict]):
     """Returns the table from meta repo based on details passed as args
+
     """
     __db_path = meta_repo_details[N.DB_URI]
     if __db_path.find('~') >= 0:
@@ -30,12 +32,14 @@ def get_meta_table(meta_repo_details:Type[Dict]):
 
 def connect_to_meta(meta_repo_details:Type[Dict], name:str) -> (Type[F], Any):
     """Connect to metadata database using the details provided asparameters in the constructor
+
     Args:
         meta_repo_details (Dict): Repository details for making connection and query
         name (str): Name of the item that needs to be queried
-        Returns:
-            status (Tuple): Returns flag Success or Failed and details in case of failure and table record in case of success
-        """
+
+    Returns:
+        status (Tuple): Returns flag Success or Failed and details in case of failure and table record in case of success
+    """
     __record = None
     (status, result_obj) = get_meta_table(meta_repo_details)
     if status == F.SUCCESS:

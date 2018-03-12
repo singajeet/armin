@@ -229,8 +229,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_temp_file</span><span class="p">()</span>
         <span class="c1">#saves the metadata of this driver to repo</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">url</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="p">[</span><span class="n">N</span><span class="o">.</span><span class="n">URL</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid Url provided&#39;</span><span class="p">)</span></div>
+        <span class="k">if</span> <span class="n">url</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="p">[</span><span class="n">N</span><span class="o">.</span><span class="n">URL</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid Url provided&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_prepare_temp_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prepares the temp file for use in operations</span>
@@ -260,8 +260,8 @@
         <span class="k">if</span> <span class="n">input_details</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;**WARNING** =&gt; Empty input! A possible incorrect</span><span class="se">\</span>
 <span class="s1">                    params&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span> <span class="o">=</span> <span class="n">input_details</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span> <span class="o">=</span> <span class="n">input_details</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.add_input"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.add_input">[docs]</a>    <span class="k">def</span> <span class="nf">add_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add a key-value pair to the input dict to source system</span>
@@ -273,8 +273,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.get_input"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.get_input">[docs]</a>    <span class="k">def</span> <span class="nf">get_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns value of input if available</span>
@@ -284,8 +284,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.has_input"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.has_input">[docs]</a>    <span class="k">def</span> <span class="nf">has_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check if input exists in input dict</span>
@@ -293,14 +293,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
+                <span class="k">return</span> <span class="kc">True</span></div>
+        <span class="k">return</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.get_input_dict"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.get_input_dict">[docs]</a>    <span class="k">def</span> <span class="nf">get_input_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns all inputs available as dict</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_input</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.get_meta"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns value of meta item from meta dict based on key passed</span>
@@ -310,16 +310,16 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.has_meta"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.has_meta">[docs]</a>    <span class="k">def</span> <span class="nf">has_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns True or False after checking key in meta dict</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
+            <span class="k">return</span> <span class="kc">True</span></div>
+        <span class="k">return</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.connect_to_meta"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.connect_to_meta">[docs]</a>    <span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;When overridden in derived class provides function to connect \</span>
@@ -332,8 +332,8 @@
 <span class="sd">                    string in case of failure</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be </span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be </span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.save"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Save the details of source in meta repo</span>
@@ -342,8 +342,8 @@
 <span class="sd">            status (F): Flag F</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.update"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Update details of source in meta repo</span>
@@ -355,8 +355,8 @@
 <span class="sd">            status (F, str): Flag F and message</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.prepare_to_connect"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.prepare_to_connect">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_to_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prepares the connection to an source system using details saved\</span>
@@ -371,8 +371,8 @@
 <span class="sd">            status (bool): True or False</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.perform_task"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.perform_task">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">perform_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>\
                            <span class="n">expected_result_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">V</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">JSON</span><span class="p">)</span>\
@@ -388,15 +388,15 @@
 <span class="sd">            future (Future): An instance of async Future callback</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractSourceDriver.get_output"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.get_output">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Any</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns result of an operation performed in source system</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;&#39;t be</span><span class="se">\</span></div></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 </pre></div>
 
            </div>

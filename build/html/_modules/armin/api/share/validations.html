@@ -170,12 +170,15 @@
 
 <div class="viewcode-block" id="Validator"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.validations.Validator">[docs]</a><span class="k">class</span> <span class="nc">Validator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Provides various kind of validation functions</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_type</span><span class="o">=</span><span class="n">N</span><span class="o">.</span><span class="n">RAISE</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor</span>
+
 <span class="sd">        Args:</span>
 <span class="sd">            action_type (N): Action that needs to be performed, Raise error or Return False</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_action_type</span> <span class="o">=</span> <span class="n">action_type</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_validation_completed</span> <span class="o">=</span> <span class="kc">False</span>
@@ -183,43 +186,48 @@
 
 <div class="viewcode-block" id="Validator.not_none"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.validations.Validator.not_none">[docs]</a>    <span class="k">def</span> <span class="nf">not_none</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check arg value and change status to invalid if it is none</span>
+
 <span class="sd">        Args:</span>
 <span class="sd">            arg: check value for not none</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset_if_validation_done</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">arg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">raise_or_invalidate</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">raise_or_invalidate</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
 <div class="viewcode-block" id="Validator.not_empty"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.validations.Validator.not_empty">[docs]</a>    <span class="k">def</span> <span class="nf">not_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check if arg is not empty</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset_if_validation_done</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">arg</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span><span class="o">.</span><span class="n">isspace</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">raise_or_invalidate</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">raise_or_invalidate</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
 <div class="viewcode-block" id="Validator.raise_or_invalidate"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.validations.Validator.raise_or_invalidate">[docs]</a>    <span class="k">def</span> <span class="nf">raise_or_invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Raise exception or set status as invalid</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_action_type</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">RAISE</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid value provided for parameter&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">INVALID</span></div>
+        <span class="k">else</span><span class="p">:</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">INVALID</span>
 
 <div class="viewcode-block" id="Validator.validate"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.validations.Validator.validate">[docs]</a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns status of all validations done</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_is_validation_completed</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">INVALID</span> <span class="k">else</span> <span class="kc">True</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_validation_completed</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">INVALID</span> <span class="k">else</span> <span class="kc">True</span>
 
 <div class="viewcode-block" id="Validator.reset_if_validation_done"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.validations.Validator.reset_if_validation_done">[docs]</a>    <span class="k">def</span> <span class="nf">reset_if_validation_done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Resets the validator if validation ops has been completed\</span>
 <span class="sd">                (by calling the validate method()</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_validation_completed</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_is_validation_completed</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">VALID</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_validation_completed</span> <span class="o">=</span> <span class="kc">False</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">VALID</span>
 </pre></div>
 
            </div>
