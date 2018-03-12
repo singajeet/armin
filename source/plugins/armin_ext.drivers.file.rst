@@ -1,8 +1,8 @@
 armin\_ext\.drivers\.file package
 =================================
 
-Submodules
-----------
+**Plugin Name**: default-file-system-driver
+-------------------------------------------
 
 armin\_ext\.drivers\.file\.system module
 ----------------------------------------
@@ -12,11 +12,3 @@ armin\_ext\.drivers\.file\.system module
     :undoc-members:
     :show-inheritance:
 
-
-Module contents
----------------
-
-.. automodule:: armin_ext.drivers.file
-    :members:
-    :undoc-members:
-    :show-inheritance:

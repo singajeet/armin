@@ -19,8 +19,8 @@ class AbstractDriver(object):
         """Constructor for abstract source driver class
 
         Args:
-           name (str): Name of the source system
-           repo_details (Dict): A dict containing config to connect to meta repository
+            name (str): Name of the source system
+            repo_details (Dict): A dict containing config to connect to meta repository
 
         """
         self._id = None
@@ -32,7 +32,7 @@ class AbstractDriver(object):
         """Adds meta details to be consumed by driver
 
         Args:
-           details (dict): A meta details dict having key-value pairs to be used by driver
+            details (Dict): A meta details dict having key-value pairs to be used by driver
 
         """
         if details is not None:
@@ -41,12 +41,12 @@ class AbstractDriver(object):
             raise ValueError('Can' 't add empty meta details')
 
     def connect_to_meta(self) -> (Type[F], str):
-        """When overridden in derived class provides function to connect with meta repo.
-            Meta repo stores information about the system like connection details, etc
+        """When overridden in derived class provides function to connect with meta repo.\
+                Meta repo stores information about the system like connection details, etc
 
         Returns:
-           status (F, str): Flag F  based on connection status, i.e., connected or
-           not connected and message string in case of failure
+            status (Type[F], str): Flag F  based on connection status, i.e., \
+                        connected or not connected and message string in case of failure
 
         """
         raise NotImplementedError(
@@ -57,7 +57,7 @@ class AbstractDriver(object):
         """Save the details of source in meta repo
 
         Returns:
-           status (F): Flag F
+            status (Type[F]): Flag F
 
         """
         raise NotImplementedError('This is an abstract method and can'
@@ -67,10 +67,10 @@ class AbstractDriver(object):
         """Update details of source in meta repo
 
         Args:
-           details (dict): Details of source system in dict form
+            details (Dict): Details of source system in dict form
 
         Returns:
-           status (F, str): Flag F and message
+            status (Type[F], str): Flag F and message
 
         """
         raise NotImplementedError('This is an abstract method and can'

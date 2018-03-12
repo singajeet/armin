@@ -180,8 +180,8 @@
         <span class="sd">&quot;&quot;&quot;Constructor for abstract source driver class</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">           name (str): Name of the source system</span>
-<span class="sd">           repo_details (Dict): A dict containing config to connect to meta repository</span>
+<span class="sd">                name (str): Name of the source system</span>
+<span class="sd">                repo_details (Dict): A dict containing config to connect to meta repository</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="kc">None</span>
@@ -193,7 +193,7 @@
         <span class="sd">&quot;&quot;&quot;Adds meta details to be consumed by driver</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">           details (dict): A meta details dict having key-value pairs to be used by driver</span>
+<span class="sd">                details (Dict): A meta details dict having key-value pairs to be used by driver</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">details</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -202,12 +202,12 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Can&#39;</span> <span class="s1">&#39;t add empty meta details&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractDriver.connect_to_meta"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.connect_to_meta">[docs]</a>    <span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;When overridden in derived class provides function to connect with meta repo.</span>
-<span class="sd">            Meta repo stores information about the system like connection details, etc</span>
+        <span class="sd">&quot;&quot;&quot;When overridden in derived class provides function to connect with meta repo.\</span>
+<span class="sd">                Meta repo stores information about the system like connection details, etc</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">           status (F, str): Flag F  based on connection status, i.e., connected or</span>
-<span class="sd">           not connected and message string in case of failure</span>
+<span class="sd">                status (Type[F], str): Flag F  based on connection status, i.e., \</span>
+<span class="sd">                        connected or not connected and message string in case of failure</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
@@ -218,7 +218,7 @@
         <span class="sd">&quot;&quot;&quot;Save the details of source in meta repo</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">           status (F): Flag F</span>
+<span class="sd">                status (Type[F]): Flag F</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div>
@@ -228,10 +228,10 @@
         <span class="sd">&quot;&quot;&quot;Update details of source in meta repo</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">           details (dict): Details of source system in dict form</span>
+<span class="sd">                details (Dict): Details of source system in dict form</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">           status (F, str): Flag F and message</span>
+<span class="sd">                status (Type[F], str): Flag F and message</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div></div>

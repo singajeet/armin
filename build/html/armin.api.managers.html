@@ -192,12 +192,10 @@
 <dl class="method">
 <dt id="armin.api.managers.base_interface.AbstractDriver.connect_to_meta">
 <code class="descname">connect_to_meta</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_interface.html#AbstractDriver.connect_to_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_interface.AbstractDriver.connect_to_meta" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>When overridden in derived class provides function to connect with meta repo.</dt>
-<dd>Meta repo stores information about the system like connection details, etc</dd>
+<dd><p>When overridden in derived class provides function to connect with meta repo.                Meta repo stores information about the system like connection details, etc</p>
+<dl class="docutils">
 <dt>Returns:</dt>
-<dd>status (F, str): Flag F  based on connection status, i.e., connected or
-not connected and message string in case of failure</dd>
+<dd>status (Type[F], str): Flag F  based on connection status, i.e.,                         connected or not connected and message string in case of failure</dd>
 </dl>
 </dd></dl>
 
@@ -207,7 +205,7 @@ not connected and message string in case of failure</dd>
 <dd><p>Save the details of source in meta repo</p>
 <dl class="docutils">
 <dt>Returns:</dt>
-<dd>status (F): Flag F</dd>
+<dd>status (Type[F]): Flag F</dd>
 </dl>
 </dd></dl>
 
@@ -217,7 +215,7 @@ not connected and message string in case of failure</dd>
 <dd><p>Adds meta details to be consumed by driver</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd>details (dict): A meta details dict having key-value pairs to be used by driver</dd>
+<dd>details (Dict): A meta details dict having key-value pairs to be used by driver</dd>
 </dl>
 </dd></dl>
 
@@ -227,9 +225,9 @@ not connected and message string in case of failure</dd>
 <dd><p>Update details of source in meta repo</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd>details (dict): Details of source system in dict form</dd>
+<dd>details (Dict): Details of source system in dict form</dd>
 <dt>Returns:</dt>
-<dd>status (F, str): Flag F and message</dd>
+<dd>status (Type[F], str): Flag F and message</dd>
 </dl>
 </dd></dl>
 
