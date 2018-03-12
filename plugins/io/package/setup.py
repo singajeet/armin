@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='default-package-template-driver',
+    name='default-package-file-driver',
     version='1.0',
 
-    description='The default driver to access package template',
+    description='The default driver to access physical package on file system',
 
     author='Ajeet Singh',
     author_email='singajeet@gmail.com',
@@ -26,18 +26,19 @@ setup(
 
     scripts=[],
 
-    provides=['driver.for.templates',
+    provides=['driver.for.package.file',
               ],
 
     packages=[
     'armin_ext',
-    'armin_ext.package',
+    'armin_ext.drivers',
+    'armin_ext.drivers.package',
     ],
     include_package_data=True,
 
     entry_points={
-        'template.drivers': [
-            'default_tenplate_driver = armin_ext.package.template:Package',
+        'package.file.drivers': [
+            'file = armin_ext.drivers.package.file:PackageFileDriver',
         ],
     },
 

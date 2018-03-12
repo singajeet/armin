@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='default-package-file-driver',
+    name='default-script-file-driver',
     version='1.0',
 
-    description='The default driver to access physical package on file system',
+    description='The default driver to access scripts on file system',
 
     author='Ajeet Singh',
     author_email='singajeet@gmail.com',
@@ -26,18 +26,19 @@ setup(
 
     scripts=[],
 
-    provides=['driver.for.package.file',
+    provides=['driver.for.script.file',
               ],
 
     packages=[
     'armin_ext',
-    'armin_ext.package',
+    'armin_ext.drivers',
+    'armin_ext.drivers.script',
     ],
     include_package_data=True,
 
     entry_points={
-        'package.file.drivers': [
-            'file = armin_ext.package.file:PackageFileDriver',
+        'script.file.drivers': [
+            'file = armin_ext.drivers.script.file:ScriptFileDriver',
         ],
     },
 

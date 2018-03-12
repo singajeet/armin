@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='default-installer-script-driver',
+    name='default-package-template',
     version='1.0',
 
-    description='The default driver to work as installer running as shell-script',
+    description='The default package template',
 
     author='Ajeet Singh',
     author_email='singajeet@gmail.com',
@@ -26,18 +26,18 @@ setup(
 
     scripts=[],
 
-    provides=['driver.for.imstallers',
+    provides=['driver.for.templates',
               ],
 
     packages=[
     'armin_ext',
-    'armin_ext.script',
+    'armin_ext.template',
     ],
     include_package_data=True,
 
     entry_points={
-        'installer.drivers': [
-            'default_installer_driver = armin_ext.script.installer:ScriptFileDriver',
+        'package.templates': [
+            'default_package_template = armin_ext.template.package:Package',
         ],
     },
 
