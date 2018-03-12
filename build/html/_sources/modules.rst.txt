@@ -20,6 +20,14 @@ Shared Resources
 
    armin.api.share
 
+Built-in Plugins
+================
+
+.. toctree::
+   :maxdepth: 4
+
+   plugins-all/modules
+
 Tests
 =====
 
