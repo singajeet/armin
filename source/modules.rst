@@ -26,7 +26,7 @@ Built-in Plugins
 .. toctree::
    :maxdepth: 4
 
-   plugins-all/modules
+   plugins/modules
 
 Tests
 =====
