@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: armin-studio
+Version: 1.0
+Summary: Armin Studio for rapid app development
+Home-page: http://githubpages.com/singajeet
+Author: Ajeet Singh
+Author-email: singajeet@gmail.com
+License: MIT
+Description-Content-Type: UNKNOWN
+Description: Armin Studio is an advanced rapid app developer's tool. With minimal effort, an enterprise size app can be developed
+        
+Keywords: armin ide studio editor tool rapid development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Editor :: Tool

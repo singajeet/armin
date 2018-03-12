@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: default-installer-script-driver
+Version: 1.0
+Summary: The default driver to work as installer running as shell-script
+Home-page: http://githubpages.com/singajeet
+Author: Ajeet Singh
+Author-email: singajeet@gmail.com
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Provides: driver.for.imstallers

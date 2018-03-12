@@ -1,0 +1,126 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin.api.share.utils &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for armin.api.share.utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: source_driver</span>
+<span class="sd">   :platform: Unix, Windows</span>
+<span class="sd">   :synopsis: A default implementation of source system driver</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">N</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">V</span>
+<span class="kn">from</span> <span class="nn">tinydb</span> <span class="k">import</span> <span class="n">TinyDB</span><span class="p">,</span> <span class="n">Query</span>
+
+
+<div class="viewcode-block" id="get_meta_table"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.utils.get_meta_table">[docs]</a><span class="k">def</span> <span class="nf">get_meta_table</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the table from meta repo based on details passed as args</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__db_path</span> <span class="o">=</span> <span class="n">meta_repo_details</span><span class="p">[</span><span class="n">N</span><span class="o">.</span><span class="n">DB_URI</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">__db_path</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">__db_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">__db_path</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">__db_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">__db_path</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+    <span class="n">__meta_db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="n">__db_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">__meta_db</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Unable to create instance of TinyDB&#39;</span><span class="p">)</span>
+    <span class="n">__source_sys_meta_table</span> <span class="o">=</span> <span class="n">__meta_db</span>\
+                <span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">[</span><span class="n">N</span><span class="o">.</span><span class="n">META_TABLE</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">__source_sys_meta_table</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Inconsistent meta repo. Can not find source</span><span class="se">\</span>
+<span class="s1">                system details table - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">meta_repo_details</span><span class="p">[</span><span class="n">N</span><span class="o">.</span><span class="n">META_TABLE</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__source_sys_meta_table</span><span class="p">)</span>
+
+<div class="viewcode-block" id="connect_to_meta"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.utils.connect_to_meta">[docs]</a><span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Any</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Connect to metadata database using the details provided asparameters in the constructor</span>
+<span class="sd">    Args:</span>
+<span class="sd">        meta_repo_details (Dict): Repository details for making connection and query</span>
+<span class="sd">        name (str): Name of the item that needs to be queried</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            status (Tuple): Returns flag Success or Failed and details in case of failure and table record in case of success</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">__record</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result_obj</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_meta_table</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+        <span class="n">__source_sys_meta_table</span> <span class="o">=</span> <span class="n">result_obj</span>
+        <span class="n">__record</span> <span class="o">=</span> <span class="n">__source_sys_meta_table</span>\
+                <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Query</span><span class="p">()[</span><span class="n">N</span><span class="o">.</span><span class="n">NAME</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result_obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">__record</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__record</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Record not found in meta repo&#39;</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

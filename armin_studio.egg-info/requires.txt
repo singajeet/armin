@@ -1,0 +1,10 @@
+tinydb
+stevedore
+typing
+configparser
+constantly
+aiohttp
+asyncio
+six
+pathlib
+goldfinch

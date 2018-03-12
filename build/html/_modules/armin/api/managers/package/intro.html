@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin.api.managers.package.intro &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for armin.api.managers.package.intro</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: intro</span>
+<span class="sd">   :platform: Any</span>
+<span class="sd">   :synopsis: Concepts and Details about `Package` package</span>
+
+<span class="sd">.. moduleauthor:: Ajeet Singh &lt;singajeetgmail.com&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Intro"><a class="viewcode-back" href="../../../../../armin.api.managers.package.html#armin.api.managers.package.intro.Intro">[docs]</a><span class="k">class</span> <span class="nc">Intro</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Introduction to Package</span>
+
+<span class="sd">    Concept of package is not of much difference as compared to other applications. Like any application or operating system (os) have packages, package manager (eg. pip, apt, yum, etc) and package source index, Armin also uses `Package` for maintaining its functionality. Package in `Armin` is not limited to one format / template and supports multiple different formats. To know more about it, go through the below provided sections.</span>
+
+<span class="sd">    Components</span>
+
+<span class="sd">    A package have the below given components and each one have its dedicated job to work with an given `Package`:</span>
+
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Component Name      |  Details                                                                  |</span>
+<span class="sd">    +=====================+===========================================================================+</span>
+<span class="sd">    | Extractor           | This component extracts or explodes package on the file system. Since     |</span>
+<span class="sd">    |                     | multiple type of packages are supported, so extractor should know how to  |</span>
+<span class="sd">    |                     | extract content from the package and notify next component to proceed     |</span>
+<span class="sd">    |                     | further.                                                                  |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Validator           | The component validates the contents of package and compares it wth       |</span>
+<span class="sd">    |                     | already configured package schemas                                        |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Runtime Locator     | This component search and locates the runtime which will be used by other |</span>
+<span class="sd">    |                     | components to resolve dependencies, build (if required), install and      |</span>
+<span class="sd">    |                     | wraps the package so that it can be interfaced to `Armin` and other sub   |</span>
+<span class="sd">    |                     | -systems.                                                                 |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Dependency Resolver | As the name suggets, this component looks for the dependencies required   |</span>
+<span class="sd">    |                     | by the current package, build and install same if required                |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Build System        | Builds the package locally if it is not already built. This component will|</span>
+<span class="sd">    |                     | not be used if package and its dependencies already exist pre-built       |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Installer           | Installs the package as required                                          |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+<span class="sd">    | Wrapper             | Exposes an package through common API language making it useable for other|</span>
+<span class="sd">    |                     | components                                                                |</span>
+<span class="sd">    +---------------------+---------------------------------------------------------------------------+</span>
+
+<span class="sd">.. uml::</span>
+
+<span class="sd">    @startuml</span>
+
+<span class="sd">    () IExtractor - [Extractor]</span>
+<span class="sd">    () IValidator - [Validator]</span>
+<span class="sd">    () IRuntimeLocator - [RuntimeLocator]</span>
+<span class="sd">    () IDependencyResolver - [DependencyResolver]</span>
+<span class="sd">    () IBuildSystem - [BuildSystem]</span>
+<span class="sd">    () IInstaller - [Installer]</span>
+<span class="sd">    () IWrapper - [Wrapper]</span>
+
+<span class="sd">    () HTTP</span>
+
+<span class="sd">    node &quot;Armin&quot; {</span>
+<span class="sd">    [Armin Runtime]</span>
+<span class="sd">    }</span>
+
+<span class="sd">    database &quot;MetaRepo&quot; {</span>
+<span class="sd">    frame &quot;Packages&quot; {</span>
+<span class="sd">    [Package Manager]</span>
+<span class="sd">    }</span>
+
+<span class="sd">    frame &quot;FileSystem&quot; {</span>
+<span class="sd">    [FileSystem Manager]</span>
+<span class="sd">    }</span>
+<span class="sd">    }</span>
+
+<span class="sd">    [Extractor] --&gt; [Validator]</span>
+<span class="sd">    [Validator] --&gt; [RuntimeLocator]</span>
+<span class="sd">    [RuntimeLocator] ..&gt; [Armin Runtime]</span>
+<span class="sd">    [RuntimeLocator] --&gt; [DependencyResolver]</span>
+<span class="sd">    [DependencyResolver] ..&gt; HTTP</span>
+<span class="sd">    [DependencyResolver] --&gt; [BuildSystem]</span>
+<span class="sd">    [BuildSystem] --&gt; [Installer]</span>
+
+<span class="sd">    @enduml</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

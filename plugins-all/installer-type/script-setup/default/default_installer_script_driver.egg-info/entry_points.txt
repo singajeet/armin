@@ -1,0 +1,3 @@
+[installer.drivers]
+default_installer_driver = armin_ext.script.installer:ScriptFileDriver
+

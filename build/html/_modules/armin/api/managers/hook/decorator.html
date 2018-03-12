@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin.api.managers.hook.decorator &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for armin.api.managers.hook.decorator</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: decorator</span>
+<span class="sd">   :platform: Any</span>
+<span class="sd">   :synopsis: Interface of an hook</span>
+<span class="sd">.. moduleauthor:: Ajeet Singh &lt;singajeet@gmail.com&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">tinydb</span> <span class="k">import</span> <span class="n">Query</span>
+<span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">F</span><span class="p">,</span> <span class="n">HC</span><span class="p">,</span> <span class="n">N</span>
+<span class="kn">from</span> <span class="nn">armin.api.managers.hook.interface</span> <span class="k">import</span> <span class="n">AbstractHook</span><span class="p">,</span> <span class="n">AbstractWrapper</span>
+<span class="kn">from</span> <span class="nn">armin.api.managers.hook.manager</span> <span class="k">import</span> <span class="n">HooksManager</span>
+
+<div class="viewcode-block" id="expose_hook"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook">[docs]</a><span class="k">class</span> <span class="nc">expose_hook</span><span class="p">(</span><span class="n">AbstractHook</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Register a method or function as hook point</span>
+<span class="sd">    Args:</span>
+<span class="sd">    namespace (str): Register an hook under given namespace. Any other callback\</span>
+<span class="sd">        registered under this namespace will be called before or after this function\</span>
+<span class="sd">        executes</span>
+<span class="sd">    allow_call_type (F): If the value is PRE, only callbacks registered under this\</span>
+<span class="sd">        namespace for Pre-execution will be called. Other options are POST, BOTH</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">allow_call_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">BOTH</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">expose_hook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">namespace</span><span class="p">,</span> <span class="n">allow_call_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__hook_mgr</span> <span class="o">=</span> <span class="n">HooksManager</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__hook_mgr</span><span class="o">.</span><span class="n">register_hook</span><span class="p">(</span><span class="n">namespace</span><span class="p">,</span> <span class="n">allow_call_type</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Callable</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the wrapper, having function passed as arg, wrapped</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span><span class="o">.</span><span class="n">load_driver</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span><span class="o">.</span><span class="n">get_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+                <span class="n">wrapper</span> <span class="o">=</span> <span class="n">result</span>
+                <span class="k">return</span> <span class="n">wrapper</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to create wrapper for func: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">func</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to load decorator Wrapper class. Please check your config and make sure driver of type Hooks-Type is installed!&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="expose_hook.run_pre_callbacks"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook.run_pre_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_pre_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Runs all the callback methods registered under this namespace pre-execution</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hook_mgr</span><span class="o">.</span><span class="n">get_pre_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">):</span></div>
+                <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="expose_hook.run_post_callbacks"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook.run_post_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_post_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Runs all the callback methods registered under this namespace post-execution</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hook_mgr</span><span class="o">.</span><span class="n">get_post_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">):</span></div></div>
+                <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="hook_it"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.hook_it">[docs]</a><span class="k">class</span> <span class="nc">hook_it</span><span class="p">(</span><span class="n">AbstractHook</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to hook a function/callback to a already exposed/registered hook based on a namespace</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">hook_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Default constructor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">hook_it</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">namespace</span><span class="p">,</span> <span class="n">hook_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span> <span class="o">=</span> <span class="n">HooksManager</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Registers the func to be called pre or post hook execution</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_call_type</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">PRE</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span><span class="o">.</span><span class="n">call_before_hook</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_call_type</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">POST</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span><span class="o">.</span><span class="n">call_after_hook</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_call_type</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">BOTH</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span><span class="o">.</span><span class="n">call_before_hook</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__hooks_mgr</span><span class="o">.</span><span class="n">call_after_hook</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Just call actual function</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

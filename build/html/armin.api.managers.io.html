@@ -1,0 +1,380 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin.api.managers.io package &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="armin.api.managers.source package" href="armin.api.managers.source.html" />
+    <link rel="prev" title="armin.api.managers.package package" href="armin.api.managers.package.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="armin-api-managers-io-package">
+<h1>armin.api.managers.io package<a class="headerlink" href="#armin-api-managers-io-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-armin.api.managers.io.interface">
+<span id="armin-api-managers-io-interface-module"></span><h2>armin.api.managers.io.interface module<a class="headerlink" href="#module-armin.api.managers.io.interface" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-interface"></span><dl class="class">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver">
+<em class="property">class </em><code class="descclassname">armin.api.managers.io.interface.</code><code class="descname">AbstractDirDriver</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em>, <em>create_new: bool = False</em>, <em>overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#armin.api.managers.io.interface.AbstractIODriver" title="armin.api.managers.io.interface.AbstractIODriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractIODriver</span></code></a></p>
+<p>An Abstract class representing a directory</p>
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>destination</em>, <em>force=False</em>, <em>create_path=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy dir to new location passed as param. If dir already exists                 and force param is True, it will overwrite the destination                 dir else will return with no operation.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>destination (str): The target location where dir needs to be copied
+force (bool): If set to True, it will overwrite the dir in                     destination
+create_path (bool): create the destination path if not exists</dd>
+<dt>Returns:</dt>
+<dd>file_path (pathlib.Path): Returns an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>                     if dir copied else None</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.exists">
+<code class="descname">exists</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether file exists or not</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.full_path">
+<code class="descname">full_path</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.full_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>full path of directory</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.get_handle">
+<code class="descname">get_handle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver.get_handle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.get_handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns handle to file or directory to perform other IO operations</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.list_all">
+<code class="descname">list_all</code><span class="sig-paren">(</span><em>pattern: str = None</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver.list_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.list_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all files and folders available under current directory</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>pattern (str): wild card pattern used to search files or folders</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.list_directories">
+<code class="descname">list_directories</code><span class="sig-paren">(</span><em>pattern: str = None</em><span class="sig-paren">)</span> &#x2192; Type[List[pathlib.Path]]<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver.list_directories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.list_directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an list of directories in current directory. If pattern is not        none, filters out directories from the list</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>pattern (str): Filter out the dirs based on pattern provided</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.list_files">
+<code class="descname">list_files</code><span class="sig-paren">(</span><em>pattern: str = None</em><span class="sig-paren">)</span> &#x2192; Type[List[pathlib.Path]]<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver.list_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.list_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an list of files in current directory. If pattern is not        none, filters out files from the list</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>pattern (str): Filter out the files based on pattern provided</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>destination</em>, <em>force=False</em>, <em>create_path=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractDirDriver.move"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the dir to the destination. Please see <a class="reference internal" href="#armin.api.managers.io.interface.AbstractDirDriver.copy" title="armin.api.managers.io.interface.AbstractDirDriver.copy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">copy()</span></code></a>                 for more information on arguments</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractDirDriver.name">
+<code class="descname">name</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractDirDriver.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name property of an IO object</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver">
+<em class="property">class </em><code class="descclassname">armin.api.managers.io.interface.</code><code class="descname">AbstractFileDriver</code><span class="sig-paren">(</span><em>name: str = None</em>, <em>repo_details: Type[Dict] = None</em>, <em>create_new: bool = False</em>, <em>base_path: Type[pathlib.Path] = None</em>, <em>overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractFileDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#armin.api.managers.io.interface.AbstractDirDriver" title="armin.api.managers.io.interface.AbstractDirDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractDirDriver</span></code></a></p>
+<p>An abstract file representing an file on OS</p>
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.base_name">
+<code class="descname">base_name</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.base_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The part before the dot of file name</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.base_path">
+<code class="descname">base_path</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.base_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base or Parent path of an file</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.content">
+<code class="descname">content</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Content of a file on filesystem in bytes</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.exists">
+<code class="descname">exists</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether file exists or not</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.ext">
+<code class="descname">ext</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extension part of filename</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.full_path">
+<code class="descname">full_path</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.full_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>full path to file including name and extension</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.name">
+<code class="descname">name</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name property of an IO object</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractFileDriver.size">
+<code class="descname">size</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractFileDriver.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.managers.io.interface.AbstractIODriver">
+<em class="property">class </em><code class="descclassname">armin.api.managers.io.interface.</code><code class="descname">AbstractIODriver</code><span class="sig-paren">(</span><em>name: str = None</em>, <em>repo_details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractIODriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractIODriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver" title="armin.api.managers.base_interface.AbstractDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.base_interface.AbstractDriver</span></code></a></p>
+<p>Base class of an object represents in filesystem</p>
+<dl class="attribute">
+<dt id="armin.api.managers.io.interface.AbstractIODriver.name">
+<code class="descname">name</code><a class="headerlink" href="#armin.api.managers.io.interface.AbstractIODriver.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name property of an IO object</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.managers.io.interface.AbstractPackageFileDriver">
+<em class="property">class </em><code class="descclassname">armin.api.managers.io.interface.</code><code class="descname">AbstractPackageFileDriver</code><span class="sig-paren">(</span><em>name: str = None</em>, <em>repo_details: Type[Dict] = None</em>, <em>create_new: bool = False</em>, <em>base_path: Type[pathlib.Path] = None</em>, <em>overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractPackageFileDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractPackageFileDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#armin.api.managers.io.interface.AbstractFileDriver" title="armin.api.managers.io.interface.AbstractFileDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractFileDriver</span></code></a></p>
+<p>An abstract class of an physical package file</p>
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractPackageFileDriver.extract_to">
+<code class="descname">extract_to</code><span class="sig-paren">(</span><em>target_path: str, name_as_sub_folder: bool = True, overwrite: bool = False) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractPackageFileDriver.extract_to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractPackageFileDriver.extract_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the contents of package to the specified path</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>target_path (str): path to the lication where package needs to be extracted
+name_as_sub_folder (bool): creates a sub folder under target_path with the                    same name as package file name before extracting contents. Default value is True
+overwrite (bool): Overwrites the contents if already exists in target location</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver">
+<em class="property">class </em><code class="descclassname">armin.api.managers.io.interface.</code><code class="descname">AbstractScriptFileDriver</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em>, <em>create_new: bool = False</em>, <em>base_path: Type[pathlib.Path] = None</em>, <em>overwrite: bool = False</em>, <em>arg_list: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#armin.api.managers.io.interface.AbstractFileDriver" title="armin.api.managers.io.interface.AbstractFileDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractFileDriver</span></code></a></p>
+<p>An abstract class for an script file on filesystem</p>
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver.execute_script">
+<code class="descname">execute_script</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver.execute_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver.execute_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the script along with the parameters provided in setup conf</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver.get_args_list_for_script">
+<code class="descname">get_args_list_for_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[List]<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver.get_args_list_for_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver.get_args_list_for_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an list of arguments that needs to be passed to script for execution</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver.get_process_instance">
+<code class="descname">get_process_instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Any<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver.get_process_instance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver.get_process_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instance of process that will be execute the script</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver.get_script_path">
+<code class="descname">get_script_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver.get_script_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver.get_script_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the script name on the file system</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver.get_stderr_pipe">
+<code class="descname">get_stderr_pipe</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Any<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver.get_stderr_pipe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver.get_stderr_pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instance of process Pipe for stderr</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.interface.AbstractScriptFileDriver.get_stdout_pipe">
+<code class="descname">get_stdout_pipe</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Any<a class="reference internal" href="_modules/armin/api/managers/io/interface.html#AbstractScriptFileDriver.get_stdout_pipe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.interface.AbstractScriptFileDriver.get_stdout_pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instance of process Pipe for stdout</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.managers.io.manager">
+<span id="armin-api-managers-io-manager-module"></span><h2>armin.api.managers.io.manager module<a class="headerlink" href="#module-armin.api.managers.io.manager" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-manager"></span><dl class="class">
+<dt id="armin.api.managers.io.manager.FileSystemManager">
+<em class="property">class </em><code class="descclassname">armin.api.managers.io.manager.</code><code class="descname">FileSystemManager</code><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager" title="armin.api.managers.base_manager.BaseDriverManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.base_manager.BaseDriverManager</span></code></a></p>
+<p>DriverManager for accessing file system. This manager will be             available under namespace…</p>
+<dl class="method">
+<dt id="armin.api.managers.io.manager.FileSystemManager.create_directory">
+<code class="descname">create_directory</code><span class="sig-paren">(</span><em>name: str = None</em>, <em>overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager.create_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager.create_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new dir using the information provided as args</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (str): Full path to the dir
+overwrite (bool): Whether to overwrite if dir already exists</dd>
+<dt>Returns:</dt>
+<dd>result (Status, File): Flag F and dir instance</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.manager.FileSystemManager.create_file">
+<code class="descname">create_file</code><span class="sig-paren">(</span><em>name: str = None</em>, <em>overwrite: bool = False</em>, <em>base_path: str = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager.create_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager.create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new file using the information provided as args</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (str): Full name of an file orfull path to the file
+overwrite (bool): Whether to overwrite if file already exists
+base_path (str): Base or parent path of file incase it is not included in name argument</dd>
+<dt>Returns:</dt>
+<dd>result (Status, File): Flag F and File instance</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.manager.FileSystemManager.get_invoke_args">
+<code class="descname">get_invoke_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager.get_invoke_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager.get_invoke_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the arguments required by FileSystemManager</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.manager.FileSystemManager.load_configuration">
+<code class="descname">load_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager.load_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager.load_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load configuration for current manager. This should be overridden        by derived classes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.manager.FileSystemManager.open_directory">
+<code class="descname">open_directory</code><span class="sig-paren">(</span><em>name: str = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager.open_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager.open_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new dir using the information provided as args</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (str): Full path to the dir</dd>
+<dt>Returns:</dt>
+<dd>result (Status, File): Flag F and dir instance</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.io.manager.FileSystemManager.open_file">
+<code class="descname">open_file</code><span class="sig-paren">(</span><em>name: str = None</em>, <em>base_path: str = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/io/manager.html#FileSystemManager.open_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.io.manager.FileSystemManager.open_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens an existing file using the information provided as args</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (str): Full name of an file orfull path to the file
+base_path (str): Base or parent path of file incase it is not included        in name argument</dd>
+<dt>Returns:</dt>
+<dd>result (Status, File): Flag F and File instance</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.managers.io">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-armin.api.managers.io" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Armin</a><ul>
+      <li>Previous: <a href="armin.api.managers.package.html" title="previous chapter">armin.api.managers.package package</a></li>
+      <li>Next: <a href="armin.api.managers.source.html" title="next chapter">armin.api.managers.source package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/armin.api.managers.io.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

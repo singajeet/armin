@@ -1,0 +1,10 @@
+armin\_ext package
+==================
+
+Module contents
+---------------
+
+.. automodule:: armin_ext
+    :members:
+    :undoc-members:
+    :show-inheritance:

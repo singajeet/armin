@@ -1,0 +1,3 @@
+include README.rst
+include armin/api/config/default.ini
+include armin/api/resources/default.json.db

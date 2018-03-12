@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin.api.managers.base_manager &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for armin.api.managers.base_manager</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: base_manager</span>
+<span class="sd">   :platform: Unix, Windows</span>
+<span class="sd">   :synopsis: Base Driver manager. All driver manager should inherit from this class</span>
+<span class="sd">.. moduleauthor:: Ajeet Singh &lt;singajeet@gmail.com&gt;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">stevedore</span> <span class="k">import</span> <span class="n">driver</span>
+<span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">armin.api.managers.base_interface</span> <span class="k">import</span> <span class="n">AbstractDriver</span>
+
+
+<div class="viewcode-block" id="BaseDriverManager"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager">[docs]</a><span class="k">class</span> <span class="nc">BaseDriverManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An abstract BaseDriverManager to provide default functionality\</span>
+<span class="sd">    to all derived managers.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;BaseDriverManager constructor</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_entry_point_namespace</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_invoke_on_load</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_configuration</span><span class="p">()</span>
+
+<div class="viewcode-block" id="BaseDriverManager.load_configuration"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Load configuration for current manager. This should be overridden\</span>
+<span class="sd">        by derived classes</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div>
+                                  <span class="s1">&#39;t be called from instance variable&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseDriverManager.list_drivers"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager.list_drivers">[docs]</a>    <span class="k">def</span> <span class="nf">list_drivers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">List</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the list of all drivers registered under this manager</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">entry_points_names</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="BaseDriverManager.get_invoke_args"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns an tuple of args that needs to be passed to driver\</span>
+<span class="sd">        while invoking it. Thus should be overridden by derived class</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            invoke_args (Tuple): Tuple of args that needs to be passed\</span>
+<span class="sd">        the driver</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div>
+                                  <span class="s1">&#39;t be called from instance variable&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseDriverManager.load_driver"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager.load_driver">[docs]</a>    <span class="k">def</span> <span class="nf">load_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                    <span class="n">driver_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">invoke_args</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Loads the active driver provided in the configuration or the\</span>
+<span class="sd">        driver having its name passes as argument to this function</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">           driver_name (str): Name of the driver which needs to be loaded.\</span>
+<span class="sd">        if no name is provided, active driver will be loaded from configuration\</span>
+
+<span class="sd">        import (optional)</span>
+<span class="sd">           invoke_args (Tuple): A tuple of arguments that needs to be passed\</span>
+<span class="sd">        to the driver (optional)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">driver_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span> <span class="o">=</span> <span class="n">driver_name</span>
+        <span class="n">_invoke_args</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">invoke_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_invoke_args</span> <span class="o">=</span> <span class="n">invoke_args</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_invoke_args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_invoke_args</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">DriverManager</span><span class="p">(</span>
+            <span class="n">namespace</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_entry_point_namespace</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span><span class="p">,</span>
+            <span class="n">invoke_on_load</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_invoke_on_load</span><span class="p">,</span>
+            <span class="n">invoke_args</span><span class="o">=</span><span class="n">_invoke_args</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span>
+                    <span class="s1">&#39;Unable to load driver - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseDriverManager.get_driver"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager.get_driver">[docs]</a>    <span class="k">def</span> <span class="nf">get_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">AbstractDriver</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Returns status and instance of active driver</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            result (F, AbstractDriver): Returns status flag and instance of active\</span>
+<span class="sd">        driver</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">driver</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span></div></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Driver manager is not initialized yet&#39;</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

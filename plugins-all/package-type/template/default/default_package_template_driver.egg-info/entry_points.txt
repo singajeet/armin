@@ -1,0 +1,3 @@
+[template.drivers]
+default_tenplate_driver = armin_ext.package.template:Package
+

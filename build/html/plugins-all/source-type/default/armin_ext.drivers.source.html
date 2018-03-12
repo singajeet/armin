@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin_ext.drivers.source package &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="armin-ext-drivers-source-package">
+<h1>armin_ext.drivers.source package<a class="headerlink" href="#armin-ext-drivers-source-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-armin_ext.drivers.source.source_driver">
+<span id="armin-ext-drivers-source-source-driver-module"></span><h2>armin_ext.drivers.source.source_driver module<a class="headerlink" href="#module-armin_ext.drivers.source.source_driver" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-source_driver"></span><dl class="class">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver">
+<em class="property">class </em><code class="descclassname">armin_ext.drivers.source.source_driver.</code><code class="descname">DefaultSourceDriver</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver" title="armin.api.managers.source.interface.AbstractSourceDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.source.interface.AbstractSourceDriver</span></code></a></p>
+<p>Default implementation of source system driver using HTTP protocol</p>
+<dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.connect_to_meta">
+<code class="descname">connect_to_meta</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.connect_to_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.connect_to_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to metadata database using the details provided as                parameters in the constructor</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>status (Tuple): Returns flag Success or Failed and details                    in case of failure</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], typing.Any</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.get_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the output of the task performed on source</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>(F, Any): returns the result flag F along with result</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.perform_task">
+<code class="descname">perform_task</code><span class="sig-paren">(</span><em>task: str = None</em>, <em>expected_result_type: Type[armin.api.share.constants.V] = 'JSON'</em><span class="sig-paren">)</span> &#x2192; Type[_asyncio.Future]<a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.perform_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.perform_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the task on source system</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>task (str): Name of the task to perform                     (optional, default = action from configuration)
+expected_result_type (V): Returns the type of result                     (V.JSON, V.FILE…) (optional, default is V.JSON)</dd>
+<dt>Returns:</dt>
+<dd>response (Response): An instance of Response</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.prepare_to_connect">
+<code class="descname">prepare_to_connect</code><span class="sig-paren">(</span><em>loop: Type[asyncio.unix_events._UnixSelectorEventLoop]) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.prepare_to_connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.prepare_to_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to the source system using details available in dict</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>loop (asyncio.loop): Current event loop running on current or some                    other thread</dd>
+<dt>Returns:</dt>
+<dd>status (F, str): Success or Failed and message in case of failure</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves details about source system in meta repo</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>details: Type[Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the details of source system in meta repo.                 if details are passed as argument same will be used to override                existing details in repo</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>details (dict): An dict of source system details</dd>
+<dt>Returns:</dt>
+<dd>status (F, msg): Success or Failed and message in case of failure</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin_ext.drivers.source">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-armin_ext.drivers.source" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../../_sources/plugins-all/source-type/default/armin_ext.drivers.source.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

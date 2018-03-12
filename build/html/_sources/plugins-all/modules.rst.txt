@@ -1,0 +1,28 @@
+Built-in Plugins
+================
+
+.. toctree::
+   :maxdepth: 5
+   :caption: I/O
+
+   io-type/filesystem/default/modules
+   io-type/filesystem/package-file/modules
+   io-type/filesystem/script-file/modules
+
+.. toctree::
+   :maxdepth: 5
+   :caption: Installer
+
+   installer-type/script-setup/default/modules
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Source
+
+   source-type/default/modules
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Package
+
+   package-type/template/default/modules

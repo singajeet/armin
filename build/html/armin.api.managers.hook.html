@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>armin.api.managers.hook package &#8212; Armin 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="armin.api.managers.package package" href="armin.api.managers.package.html" />
+    <link rel="prev" title="armin.api.managers package" href="armin.api.managers.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="armin-api-managers-hook-package">
+<h1>armin.api.managers.hook package<a class="headerlink" href="#armin-api-managers-hook-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-armin.api.managers.hook.decorator">
+<span id="armin-api-managers-hook-decorator-module"></span><h2>armin.api.managers.hook.decorator module<a class="headerlink" href="#module-armin.api.managers.hook.decorator" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-decorator"></span><dl class="class">
+<dt id="armin.api.managers.hook.decorator.expose_hook">
+<em class="property">class </em><code class="descclassname">armin.api.managers.hook.decorator.</code><code class="descname">expose_hook</code><span class="sig-paren">(</span><em>namespace: str</em>, <em>allow_call_type: Type[armin.api.share.constants.F] = &lt;F=BOTH&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/decorator.html#expose_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.decorator.expose_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#armin.api.managers.hook.interface.AbstractHook" title="armin.api.managers.hook.interface.AbstractHook"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.hook.interface.AbstractHook</span></code></a></p>
+<p>Register a method or function as hook point
+Args:
+namespace (str): Register an hook under given namespace. Any other callback        registered under this namespace will be called before or after this function        executes
+allow_call_type (F): If the value is PRE, only callbacks registered under this        namespace for Pre-execution will be called. Other options are POST, BOTH</p>
+<dl class="method">
+<dt id="armin.api.managers.hook.decorator.expose_hook.run_post_callbacks">
+<code class="descname">run_post_callbacks</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/decorator.html#expose_hook.run_post_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.decorator.expose_hook.run_post_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs all the callback methods registered under this namespace post-execution</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.decorator.expose_hook.run_pre_callbacks">
+<code class="descname">run_pre_callbacks</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/decorator.html#expose_hook.run_pre_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.decorator.expose_hook.run_pre_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs all the callback methods registered under this namespace pre-execution</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.managers.hook.decorator.hook_it">
+<em class="property">class </em><code class="descclassname">armin.api.managers.hook.decorator.</code><code class="descname">hook_it</code><span class="sig-paren">(</span><em>namespace: str, hook_type: Type[armin.api.share.constants.F]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/decorator.html#hook_it"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.decorator.hook_it" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#armin.api.managers.hook.interface.AbstractHook" title="armin.api.managers.hook.interface.AbstractHook"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.hook.interface.AbstractHook</span></code></a></p>
+<p>Class to hook a function/callback to a already exposed/registered hook based on a namespace</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.managers.hook.interface">
+<span id="armin-api-managers-hook-interface-module"></span><h2>armin.api.managers.hook.interface module<a class="headerlink" href="#module-armin.api.managers.hook.interface" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-interface"></span><dl class="class">
+<dt id="armin.api.managers.hook.interface.AbstractHook">
+<em class="property">class </em><code class="descclassname">armin.api.managers.hook.interface.</code><code class="descname">AbstractHook</code><span class="sig-paren">(</span><em>namespace: str</em>, <em>allow_call_type: Type[armin.api.share.constants.F] = &lt;F=BOTH&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/interface.html#AbstractHook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.interface.AbstractHook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract class for an hook</p>
+<dl class="method">
+<dt id="armin.api.managers.hook.interface.AbstractHook.run_post_callbacks">
+<code class="descname">run_post_callbacks</code><span class="sig-paren">(</span><em>*args, **kwargs) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/interface.html#AbstractHook.run_post_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.interface.AbstractHook.run_post_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.interface.AbstractHook.run_pre_callbacks">
+<code class="descname">run_pre_callbacks</code><span class="sig-paren">(</span><em>*args, **kwargs) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/interface.html#AbstractHook.run_pre_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.interface.AbstractHook.run_pre_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.managers.hook.interface.AbstractWrapper">
+<em class="property">class </em><code class="descclassname">armin.api.managers.hook.interface.</code><code class="descname">AbstractWrapper</code><a class="reference internal" href="_modules/armin/api/managers/hook/interface.html#AbstractWrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.interface.AbstractWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An abstract wrapper class for decorators</p>
+<dl class="method">
+<dt id="armin.api.managers.hook.interface.AbstractWrapper.wrap">
+<code class="descname">wrap</code><span class="sig-paren">(</span><em>decorator</em>, <em>func</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/interface.html#AbstractWrapper.wrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.interface.AbstractWrapper.wrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>wraps an function to give new behaviour</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.managers.hook.manager">
+<span id="armin-api-managers-hook-manager-module"></span><h2>armin.api.managers.hook.manager module<a class="headerlink" href="#module-armin.api.managers.hook.manager" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-manager"></span><dl class="class">
+<dt id="armin.api.managers.hook.manager.HooksManager">
+<em class="property">class </em><code class="descclassname">armin.api.managers.hook.manager.</code><code class="descname">HooksManager</code><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager" title="armin.api.managers.base_manager.BaseDriverManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.base_manager.BaseDriverManager</span></code></a></p>
+<p>A manager class for hooks</p>
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.call_after_hook">
+<code class="descname">call_after_hook</code><span class="sig-paren">(</span><em>namespace: str, func: Type[Callable]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.call_after_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.call_after_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an func/callback to be called after calling hook</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.call_before_hook">
+<code class="descname">call_before_hook</code><span class="sig-paren">(</span><em>namespace: str, func: Type[Callable]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.call_before_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.call_before_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an func/callback to be called before calling hook</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.get_invoke_args">
+<code class="descname">get_invoke_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.get_invoke_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.get_invoke_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>No args to pass</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.get_post_callback_list">
+<code class="descname">get_post_callback_list</code><span class="sig-paren">(</span><em>namespace_filter=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.get_post_callback_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.get_post_callback_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of post-execution callbacks. If filter arg is provided, only callbacks registered under a namespace will be returned</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.get_pre_callback_list">
+<code class="descname">get_pre_callback_list</code><span class="sig-paren">(</span><em>namespace_filter=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.get_pre_callback_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.get_pre_callback_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of pre-execution callbacks. If filter arg is provided, only callbacks registered under a namespace will be returned</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.get_wrapper">
+<code class="descname">get_wrapper</code><span class="sig-paren">(</span><em>decorator</em>, <em>func</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.get_wrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.get_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the wrapper created on the actual function</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.load_configuration">
+<code class="descname">load_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.load_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.load_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the configuration for connecting to meta repo, etc</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.hook.manager.HooksManager.post_callbacks_repo">
+<code class="descname">post_callbacks_repo</code><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.post_callbacks_repo" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback repo of funcs that needs to be called post-hook execution</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.managers.hook.manager.HooksManager.pre_callbacks_repo">
+<code class="descname">pre_callbacks_repo</code><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.pre_callbacks_repo" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback repo of funcs that needs to be called pre-hook execution</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.managers.hook.manager.HooksManager.register_hook">
+<code class="descname">register_hook</code><span class="sig-paren">(</span><em>namespace: str</em>, <em>call_type: Type[armin.api.share.constants.F] = &lt;F=BOTH&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/hook/manager.html#HooksManager.register_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.hook.manager.HooksManager.register_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers an hook under given namespace and call type</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.managers.hook">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-armin.api.managers.hook" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Armin</a><ul>
+      <li>Previous: <a href="armin.api.managers.html" title="previous chapter">armin.api.managers package</a></li>
+      <li>Next: <a href="armin.api.managers.package.html" title="next chapter">armin.api.managers.package package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ajeet Singh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/armin.api.managers.hook.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

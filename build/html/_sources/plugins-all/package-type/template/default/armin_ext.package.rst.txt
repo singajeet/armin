@@ -1,0 +1,22 @@
+armin\_ext\.package package
+===========================
+
+Submodules
+----------
+
+armin\_ext\.package\.template module
+------------------------------------
+
+.. automodule:: armin_ext.package.template
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: armin_ext.package
+    :members:
+    :undoc-members:
+    :show-inheritance:
