@@ -237,10 +237,10 @@
 </li>
       <li><a href="armin.api.managers.hook.html#module-armin.api.managers.hook">armin.api.managers.hook (module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="armin.api.managers.hook.html#module-armin.api.managers.hook.decorator">armin.api.managers.hook.decorator (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="armin.api.managers.hook.html#module-armin.api.managers.hook.interface">armin.api.managers.hook.interface (module)</a>
 </li>
       <li><a href="armin.api.managers.hook.html#module-armin.api.managers.hook.manager">armin.api.managers.hook.manager (module)</a>
@@ -284,6 +284,10 @@
       <li><a href="plugins/armin_ext.drivers.file.html#module-armin_ext.drivers.file.system">armin_ext.drivers.file.system (module)</a>
 </li>
       <li><a href="plugins/armin_ext.drivers.package.html#module-armin_ext.drivers.package.file">armin_ext.drivers.package.file (module)</a>
+</li>
+      <li><a href="plugins/armin_ext.drivers.script.html#module-armin_ext.drivers.script.file">armin_ext.drivers.script.file (module)</a>
+</li>
+      <li><a href="plugins/armin_ext.drivers.source.html#module-armin_ext.drivers.source.source_driver">armin_ext.drivers.source.source_driver (module)</a>
 </li>
       <li><a href="armin.api.share.html#armin.api.share.constants.N.AUTHOR">AUTHOR (armin.api.share.constants.N attribute)</a>
 </li>
@@ -336,6 +340,8 @@
 </li>
         <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.connect_to_meta">(armin.api.managers.source.interface.AbstractSourceDriver method)</a>
 </li>
+        <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.connect_to_meta">(armin_ext.drivers.source.source_driver.DefaultSourceDriver method)</a>
+</li>
         <li><a href="armin.api.share.html#armin.api.share.utils.connect_to_meta">(in module armin.api.share.utils)</a>
 </li>
       </ul></li>
@@ -377,9 +383,11 @@
         <li><a href="armin.api.share.html#armin.api.share.constants.v_SC.DB_URI">(armin.api.share.constants.v_SC attribute)</a>
 </li>
       </ul></li>
+      <li><a href="armin.api.managers.hook.html#module-decorator">decorator (module)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="armin.api.managers.hook.html#module-decorator">decorator (module)</a>
+      <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver">DefaultSourceDriver (class in armin_ext.drivers.source.source_driver)</a>
 </li>
       <li><a href="armin.api.share.html#armin.api.share.constants.N.DELETION_TYPE">DELETION_TYPE (armin.api.share.constants.N attribute)</a>
 </li>
@@ -408,7 +416,11 @@
       <li><a href="armin.api.share.html#armin.api.share.constants.F.ERROR">ERROR (armin.api.share.constants.F attribute)</a>
 </li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.execute_script">execute_script() (armin.api.managers.io.interface.AbstractScriptFileDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.execute_script">(armin_ext.drivers.script.file.ScriptFileDriver method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.exists">exists (armin.api.managers.io.interface.AbstractDirDriver attribute)</a>
@@ -439,7 +451,7 @@
 </li>
       <li><a href="armin.api.share.html#armin.api.share.constants.V.FILE">FILE (armin.api.share.constants.V attribute)</a>
 </li>
-      <li><a href="plugins/armin_ext.drivers.package.html#module-file">file (module)</a>
+      <li><a href="plugins/armin_ext.drivers.package.html#module-file">file (module)</a>, <a href="plugins/armin_ext.drivers.script.html#module-file">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -464,7 +476,11 @@
       <li><a href="armin.api.share.html#armin.api.share.constants.v_CONF.get">get() (armin.api.share.constants.v_CONF method)</a>
 </li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_args_list_for_script">get_args_list_for_script() (armin.api.managers.io.interface.AbstractScriptFileDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_args_list_for_script">(armin_ext.drivers.script.file.ScriptFileDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_component">get_component() (armin.api.managers.package.interface.AbstractPackage method)</a>
 </li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_component_by_id">get_component_by_id() (armin.api.managers.package.interface.AbstractPackage method)</a>
@@ -499,18 +515,22 @@
         <li><a href="armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.get_invoke_args">(armin.api.managers.source.manager.SourceDriverManager method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_meta">get_meta() (armin.api.managers.package.interface.AbstractPackage method)</a>
 
       <ul>
         <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.get_meta">(armin.api.managers.source.interface.AbstractSourceDriver method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="armin.api.share.html#armin.api.share.utils.get_meta_table">get_meta_table() (in module armin.api.share.utils)</a>
 </li>
       <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.get_output">get_output() (armin.api.managers.source.interface.AbstractSourceDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.get_output">(armin_ext.drivers.source.source_driver.DefaultSourceDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_package_file_id">get_package_file_id() (armin.api.managers.package.interface.AbstractPackage method)</a>
 </li>
       <li><a href="armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_post_callback_list">get_post_callback_list() (armin.api.managers.hook.manager.HooksManager method)</a>
@@ -518,9 +538,17 @@
       <li><a href="armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_pre_callback_list">get_pre_callback_list() (armin.api.managers.hook.manager.HooksManager method)</a>
 </li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_process_instance">get_process_instance() (armin.api.managers.io.interface.AbstractScriptFileDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_process_instance">(armin_ext.drivers.script.file.ScriptFileDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_script_path">get_script_path() (armin.api.managers.io.interface.AbstractScriptFileDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_script_path">(armin_ext.drivers.script.file.ScriptFileDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_setup_config">get_setup_config() (armin.api.managers.package.interface.AbstractPackage method)</a>
 </li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_setup_script_args">get_setup_script_args() (armin.api.managers.package.interface.AbstractPackage method)</a>
@@ -532,9 +560,17 @@
       <li><a href="armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.get_source_system_driver">get_source_system_driver() (armin.api.managers.source.manager.SourceDriverManager method)</a>
 </li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_stderr_pipe">get_stderr_pipe() (armin.api.managers.io.interface.AbstractScriptFileDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_stderr_pipe">(armin_ext.drivers.script.file.ScriptFileDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_stdout_pipe">get_stdout_pipe() (armin.api.managers.io.interface.AbstractScriptFileDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_stdout_pipe">(armin_ext.drivers.script.file.ScriptFileDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_wrapper">get_wrapper() (armin.api.managers.hook.manager.HooksManager method)</a>
 </li>
   </ul></td>
@@ -718,7 +754,11 @@
       <li><a href="armin.api.share.html#armin.api.share.constants.N.PASSWORD">PASSWORD (armin.api.share.constants.N attribute)</a>
 </li>
       <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.perform_task">perform_task() (armin.api.managers.source.interface.AbstractSourceDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.perform_task">(armin_ext.drivers.source.source_driver.DefaultSourceDriver method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="armin.api.share.html#armin.api.share.constants.N.PORT">PORT (armin.api.share.constants.N attribute)</a>
@@ -732,7 +772,11 @@
       <li><a href="armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.pre_callbacks_repo">pre_callbacks_repo (armin.api.managers.hook.manager.HooksManager attribute)</a>
 </li>
       <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.prepare_to_connect">prepare_to_connect() (armin.api.managers.source.interface.AbstractSourceDriver method)</a>
+
+      <ul>
+        <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.prepare_to_connect">(armin_ext.drivers.source.source_driver.DefaultSourceDriver method)</a>
 </li>
+      </ul></li>
       <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.put_input">put_input() (armin.api.managers.source.interface.AbstractSourceDriver method)</a>
 </li>
   </ul></td>
@@ -788,7 +832,11 @@
 </li>
         <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.save">(armin.api.managers.source.interface.AbstractSourceDriver method)</a>
 </li>
+        <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.save">(armin_ext.drivers.source.source_driver.DefaultSourceDriver method)</a>
+</li>
       </ul></li>
+      <li><a href="plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver">ScriptFileDriver (class in armin_ext.drivers.script.file)</a>
+</li>
       <li><a href="armin.api.share.html#armin.api.share.sessions.Web.SESSION">SESSION (armin.api.share.sessions.Web attribute)</a>
 </li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_custom_meta">set_custom_meta() (armin.api.managers.package.interface.AbstractPackage method)</a>
@@ -809,17 +857,17 @@
 </li>
       <li><a href="armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_source_id">set_source_id() (armin.api.managers.package.interface.AbstractPackage method)</a>
 </li>
-      <li><a href="armin.api.share.html#armin.api.share.constants.v_PC.SETUP_FILE_KEY">SETUP_FILE_KEY (armin.api.share.constants.v_PC attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="armin.api.share.html#armin.api.share.constants.v_PC.SETUP_FILE_KEY">SETUP_FILE_KEY (armin.api.share.constants.v_PC attribute)</a>
+</li>
       <li><a href="armin.api.share.html#armin.api.share.constants.v_PC.SETUP_SECTION_KEY">SETUP_SECTION_KEY (armin.api.share.constants.v_PC attribute)</a>
 </li>
       <li><a href="armin.api.managers.io.html#armin.api.managers.io.interface.AbstractFileDriver.size">size (armin.api.managers.io.interface.AbstractFileDriver attribute)</a>
 </li>
       <li><a href="armin.api.share.html#armin.api.share.constants.F.SOFT">SOFT (armin.api.share.constants.F attribute)</a>
 </li>
-      <li><a href="armin.api.share.html#module-source_driver">source_driver (module)</a>
+      <li><a href="armin.api.share.html#module-source_driver">source_driver (module)</a>, <a href="plugins/armin_ext.drivers.source.html#module-source_driver">[1]</a>
 </li>
       <li><a href="armin.api.managers.source.html#armin.api.managers.source.context.source_driver">source_driver() (in module armin.api.managers.source.context)</a>
 </li>
@@ -881,6 +929,8 @@
 
       <ul>
         <li><a href="armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver.update">(armin.api.managers.source.interface.AbstractSourceDriver method)</a>
+</li>
+        <li><a href="plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.update">(armin_ext.drivers.source.source_driver.DefaultSourceDriver method)</a>
 </li>
       </ul></li>
   </ul></td>

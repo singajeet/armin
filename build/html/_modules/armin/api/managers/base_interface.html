@@ -180,8 +180,8 @@
         <span class="sd">&quot;&quot;&quot;Constructor for abstract source driver class</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">                name (str): Name of the source system</span>
-<span class="sd">                repo_details (Dict): A dict containing config to connect to meta repository</span>
+<span class="sd">            name (str): Name of the source system</span>
+<span class="sd">            repo_details (Dict): A dict containing config to connect to meta repository</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="kc">None</span>
@@ -193,7 +193,7 @@
         <span class="sd">&quot;&quot;&quot;Adds meta details to be consumed by driver</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">                details (Dict): A meta details dict having key-value pairs to be used by driver</span>
+<span class="sd">            details (Dict): A meta details dict having key-value pairs to be used by driver</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">details</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -206,7 +206,7 @@
 <span class="sd">                Meta repo stores information about the system like connection details, etc</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">                status (Type[F], str): Flag F  based on connection status, i.e., \</span>
+<span class="sd">            status (Type[F], str): Flag F  based on connection status, i.e., \</span>
 <span class="sd">                        connected or not connected and message string in case of failure</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -218,7 +218,7 @@
         <span class="sd">&quot;&quot;&quot;Save the details of source in meta repo</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">                status (Type[F]): Flag F</span>
+<span class="sd">            status (Type[F]): Flag F</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div>
@@ -228,10 +228,10 @@
         <span class="sd">&quot;&quot;&quot;Update details of source in meta repo</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">                details (Dict): Details of source system in dict form</span>
+<span class="sd">            details (Dict): Details of source system in dict form</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">                status (Type[F], str): Flag F and message</span>
+<span class="sd">            status (Type[F], str): Flag F and message</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div></div>
