@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#tests">Tests</a></li>
@@ -171,7 +172,7 @@
 <span class="kn">from</span> <span class="nn">tinydb</span> <span class="k">import</span> <span class="n">TinyDB</span><span class="p">,</span> <span class="n">Query</span>
 
 
-<div class="viewcode-block" id="get_meta_table"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.utils.get_meta_table">[docs]</a><span class="k">def</span> <span class="nf">get_meta_table</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]):</span>
+<div class="viewcode-block" id="get_meta_table"><a class="viewcode-back" href="../../../../shared/armin.api.share.html#armin.api.share.utils.get_meta_table">[docs]</a><span class="k">def</span> <span class="nf">get_meta_table</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;Returns the table from meta repo based on details passed as args</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -191,7 +192,7 @@
     <span class="k">else</span><span class="p">:</span></div>
         <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__source_sys_meta_table</span><span class="p">)</span>
 
-<div class="viewcode-block" id="connect_to_meta"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.utils.connect_to_meta">[docs]</a><span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Any</span><span class="p">):</span>
+<div class="viewcode-block" id="connect_to_meta"><a class="viewcode-back" href="../../../../shared/armin.api.share.html#armin.api.share.utils.connect_to_meta">[docs]</a><span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Any</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Connect to metadata database using the details provided asparameters in the constructor</span>
 
 <span class="sd">    Args:</span>

@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../modules.html#tests">Tests</a></li>
@@ -171,12 +172,12 @@
 <span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">F</span><span class="p">,</span> <span class="n">V</span>
 
 
-<div class="viewcode-block" id="AbstractDriver"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver">[docs]</a><span class="k">class</span> <span class="nc">AbstractDriver</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractDriver"><a class="viewcode-back" href="../../../../api/armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver">[docs]</a><span class="k">class</span> <span class="nc">AbstractDriver</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;An base class for an source system</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AbstractDriver.__init__"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractDriver.__init__"><a class="viewcode-back" href="../../../../api/armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor for abstract source driver class</span>
 
 <span class="sd">        Args:</span>
@@ -189,7 +190,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_details</span> <span class="o">=</span> <span class="p">{}</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_meta_repo_details</span> <span class="o">=</span> <span class="n">repo_details</span>
 
-<div class="viewcode-block" id="AbstractDriver.set_meta"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractDriver.set_meta"><a class="viewcode-back" href="../../../../api/armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds meta details to be consumed by driver</span>
 
 <span class="sd">        Args:</span>
@@ -201,7 +202,7 @@
         <span class="k">else</span><span class="p">:</span></div>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Can&#39;</span> <span class="s1">&#39;t add empty meta details&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractDriver.connect_to_meta"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.connect_to_meta">[docs]</a>    <span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractDriver.connect_to_meta"><a class="viewcode-back" href="../../../../api/armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.connect_to_meta">[docs]</a>    <span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;When overridden in derived class provides function to connect with meta repo.\</span>
 <span class="sd">                Meta repo stores information about the system like connection details, etc</span>
 
@@ -214,7 +215,7 @@
             <span class="s1">&#39;This is an abstract method and cant be called from instance variable&#39;</span></div>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractDriver.save"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractDriver.save"><a class="viewcode-back" href="../../../../api/armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Save the details of source in meta repo</span>
 
 <span class="sd">        Returns:</span>
@@ -224,7 +225,7 @@
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span></div>
                                   <span class="s1">&#39;t be called from instance variable&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractDriver.update"><a class="viewcode-back" href="../../../../armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractDriver.update"><a class="viewcode-back" href="../../../../api/armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Update details of source in meta repo</span>
 
 <span class="sd">        Args:</span>

@@ -483,7 +483,7 @@ components</td>
 </table>
 </div></blockquote>
 <p class="plantuml">
-<img src="_images/plantuml-ee27d04c538e14467d6086c5a94b1930f3fb8d06.png" alt="&#64;startuml
+<img src="_images/plantuml-22b4440e798d8160e9cdaef9a7be0e8f0ad10f14.png" alt="&#64;startuml
 
 () IExtractor - [Extractor]
 () IValidator - [Validator]
@@ -491,21 +491,26 @@ components</td>
 () IDependencyResolver - [DependencyResolver]
 () IBuildSystem - [BuildSystem]
 () IInstaller - [Installer]
-() IWrapper - [Wrapper]
+() IWrapper - [APIWrapper]
 
 () HTTP
 
 node &quot;Armin&quot; {
 [Armin Runtime]
+[Package Manager]
+[FileSystem Manager]
+[Component Manager]
+[APIPublisher]
+[...]
 }
 
 database &quot;MetaRepo&quot; {
 frame &quot;Packages&quot; {
-[Package Manager]
+[Package Meta]
 }
 
 frame &quot;FileSystem&quot; {
-[FileSystem Manager]
+[FileSystem Meta]
 }
 }
 
@@ -516,7 +521,12 @@ frame &quot;FileSystem&quot; {
 [DependencyResolver] ..&gt; HTTP
 [DependencyResolver] --&gt; [BuildSystem]
 [BuildSystem] --&gt; [Installer]
-
+[Installer] ..&gt; [FileSystem Manager]
+[FileSystem Manager] ..&gt; [FileSystem Meta]
+[Installer] ..&gt; [Package Manager]
+[Package Manager] ..&gt; [Package Meta]
+[Installer] --&gt; [APIWrapper]
+[APIWrapper] ..&gt; [APIPublisher]
 &#64;enduml" />
 </p>
 </dd></dl>

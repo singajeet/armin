@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#tests">Tests</a></li>
@@ -170,7 +171,7 @@
 <span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">V</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">N</span>
 
 
-<div class="viewcode-block" id="source_driver"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.context.source_driver">[docs]</a><span class="nd">@asynccontextmanager</span>
+<div class="viewcode-block" id="source_driver"><a class="viewcode-back" href="../../../../../api/armin.api.managers.source.html#armin.api.managers.source.context.source_driver">[docs]</a><span class="nd">@asynccontextmanager</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">source_driver</span><span class="p">(</span><span class="n">loop</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>\
                         <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expected_result_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">V</span><span class="p">]</span><span class="o">=</span><span class="n">V</span><span class="o">.</span><span class="n">JSON</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">armin.api.managers.source.manager</span> <span class="k">import</span> <span class="n">SourceDriverManager</span>

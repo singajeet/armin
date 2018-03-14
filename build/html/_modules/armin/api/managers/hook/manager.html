@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#tests">Tests</a></li>
@@ -170,7 +171,7 @@
 <span class="kn">from</span> <span class="nn">armin.api.managers.base_manager</span> <span class="k">import</span> <span class="n">BaseDriverManager</span>
 <span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">HC</span><span class="p">,</span> <span class="n">F</span>
 
-<div class="viewcode-block" id="HooksManager"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager">[docs]</a><span class="k">class</span> <span class="nc">HooksManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager">[docs]</a><span class="k">class</span> <span class="nc">HooksManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A manager class for hooks</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -183,7 +184,7 @@
             <span class="bp">cls</span><span class="o">.</span><span class="n">__single_hooks_manager</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__single_hooks_manager</span>
 
-<div class="viewcode-block" id="HooksManager.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager.__init__"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor for HooksManager</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">HooksManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -202,7 +203,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post_callbacks_repo</span>
 
-<div class="viewcode-block" id="HooksManager.get_pre_callback_list"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_pre_callback_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_pre_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager.get_pre_callback_list"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_pre_callback_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_pre_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a list of pre-execution callbacks. If filter arg is provided, only callbacks registered under a namespace will be returned</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">namespace_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -216,7 +217,7 @@
                 <span class="n">_all_cb_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cb_list</span><span class="p">)</span></div>
             <span class="k">return</span> <span class="n">_all_cb_list</span>
 
-<div class="viewcode-block" id="HooksManager.get_post_callback_list"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_post_callback_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_post_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager.get_post_callback_list"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_post_callback_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_post_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a list of post-execution callbacks. If filter arg is provided, only callbacks registered under a namespace will be returned</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">namespace_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -230,7 +231,7 @@
                 <span class="n">_all_cb_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cb_list</span><span class="p">)</span></div>
             <span class="k">return</span> <span class="n">_all_cb_list</span>
 
-<div class="viewcode-block" id="HooksManager.load_configuration"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
+<div class="viewcode-block" id="HooksManager.load_configuration"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
        <span class="sd">&quot;&quot;&quot;Loads the configuration for connecting to meta repo, etc</span>
 <span class="sd">       &quot;&quot;&quot;</span>
        <span class="k">if</span> <span class="n">HC</span><span class="o">.</span><span class="n">ACTIVE_DRIVER</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -242,12 +243,12 @@
        <span class="k">else</span><span class="p">:</span></div>
            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Entry point namespace is required. Check your config&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="HooksManager.get_invoke_args"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager.get_invoke_args"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;No args to pass</span>
 <span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="k">return</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="HooksManager.get_wrapper"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_wrapper">[docs]</a>    <span class="k">def</span> <span class="nf">get_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decorator</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager.get_wrapper"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.get_wrapper">[docs]</a>    <span class="k">def</span> <span class="nf">get_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decorator</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the wrapper created on the actual function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_driver</span><span class="p">()</span>
@@ -256,7 +257,7 @@
             <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">decorator</span><span class="p">,</span> <span class="n">func</span><span class="p">))</span></div>
         <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 
-<div class="viewcode-block" id="HooksManager.register_hook"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.register_hook">[docs]</a>    <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">call_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">BOTH</span><span class="p">):</span>
+<div class="viewcode-block" id="HooksManager.register_hook"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.register_hook">[docs]</a>    <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">call_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">BOTH</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Registers an hook under given namespace and call type</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">namespace</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -285,7 +286,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Specified namespace is already in use. Please choose a different one&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_post_callbacks_repo</span><span class="p">[</span><span class="n">namespace</span><span class="p">]</span><span class="o">=</span><span class="p">[]</span>
 
-<div class="viewcode-block" id="HooksManager.call_before_hook"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.call_before_hook">[docs]</a>    <span class="k">def</span> <span class="nf">call_before_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Callable</span><span class="p">]):</span>
+<div class="viewcode-block" id="HooksManager.call_before_hook"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.call_before_hook">[docs]</a>    <span class="k">def</span> <span class="nf">call_before_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Callable</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Register an func/callback to be called before calling hook</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">namespace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -297,7 +298,7 @@
         <span class="k">else</span><span class="p">:</span></div>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Either namespace or func passed as arg is not valid&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="HooksManager.call_after_hook"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.call_after_hook">[docs]</a>    <span class="k">def</span> <span class="nf">call_after_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Callable</span><span class="p">]):</span>
+<div class="viewcode-block" id="HooksManager.call_after_hook"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.manager.HooksManager.call_after_hook">[docs]</a>    <span class="k">def</span> <span class="nf">call_after_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Callable</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Register an func/callback to be called after calling hook</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">namespace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>

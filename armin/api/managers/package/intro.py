@@ -55,21 +55,26 @@ class Intro(object):
     () IDependencyResolver - [DependencyResolver]
     () IBuildSystem - [BuildSystem]
     () IInstaller - [Installer]
-    () IWrapper - [Wrapper]
+    () IWrapper - [APIWrapper]
 
     () HTTP
 
     node "Armin" {
     [Armin Runtime]
+    [Package Manager]
+    [FileSystem Manager]
+    [Component Manager]
+    [APIPublisher]
+    [...]
     }
 
     database "MetaRepo" {
     frame "Packages" {
-    [Package Manager]
+    [Package Meta]
     }
 
     frame "FileSystem" {
-    [FileSystem Manager]
+    [FileSystem Meta]
     }
     }
 
@@ -80,7 +85,12 @@ class Intro(object):
     [DependencyResolver] ..> HTTP
     [DependencyResolver] --> [BuildSystem]
     [BuildSystem] --> [Installer]
-
+    [Installer] ..> [FileSystem Manager]
+    [FileSystem Manager] ..> [FileSystem Meta]
+    [Installer] ..> [Package Manager]
+    [Package Manager] ..> [Package Meta]
+    [Installer] --> [APIWrapper]
+    [APIWrapper] ..> [APIPublisher]
     @enduml
 
     """

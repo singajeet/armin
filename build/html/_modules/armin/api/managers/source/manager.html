@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#tests">Tests</a></li>
@@ -171,7 +172,7 @@
 <span class="kn">from</span> <span class="nn">armin.api.managers.base_manager</span> <span class="k">import</span> <span class="n">BaseDriverManager</span>
 
 
-<div class="viewcode-block" id="SourceDriverManager"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager">[docs]</a><span class="k">class</span> <span class="nc">SourceDriverManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
+<div class="viewcode-block" id="SourceDriverManager"><a class="viewcode-back" href="../../../../../api/armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager">[docs]</a><span class="k">class</span> <span class="nc">SourceDriverManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;DriverManager for managing source system related drivers.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -184,7 +185,7 @@
             <span class="bp">cls</span><span class="o">.</span><span class="n">__single_source_driver_mgr</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__single_source_driver_mgr</span>
 
-<div class="viewcode-block" id="SourceDriverManager.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SourceDriverManager.__init__"><a class="viewcode-back" href="../../../../../api/armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;SourceDriverManager constructor to initialize the singleton instance of this class.</span>
 
 <span class="sd">        Example:</span>
@@ -200,7 +201,7 @@
 <span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="nb">super</span><span class="p">(</span><span class="n">SourceDriverManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
-<div class="viewcode-block" id="SourceDriverManager.load_configuration"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
+<div class="viewcode-block" id="SourceDriverManager.load_configuration"><a class="viewcode-back" href="../../../../../api/armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
         <span class="k">if</span> <span class="n">v_SC</span><span class="o">.</span><span class="n">ACTIVE_DRIVER</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span> <span class="o">=</span> <span class="n">v_SC</span><span class="o">.</span><span class="n">ACTIVE_DRIVER</span>
         <span class="k">else</span><span class="p">:</span>
@@ -214,10 +215,10 @@
         <span class="k">else</span><span class="p">:</span></div>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Entry point namespace is required. Check your configuration&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SourceDriverManager.get_invoke_args"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]:</span></div>
+<div class="viewcode-block" id="SourceDriverManager.get_invoke_args"><a class="viewcode-back" href="../../../../../api/armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]:</span></div>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">,)</span>
 
-<div class="viewcode-block" id="SourceDriverManager.get_source_system_driver"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.get_source_system_driver">[docs]</a>    <span class="k">def</span> <span class="nf">get_source_system_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> \
+<div class="viewcode-block" id="SourceDriverManager.get_source_system_driver"><a class="viewcode-back" href="../../../../../api/armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.get_source_system_driver">[docs]</a>    <span class="k">def</span> <span class="nf">get_source_system_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> \
             <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">interface</span><span class="o">.</span><span class="n">AbstractSourceDriver</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Returns instance of the plugin driver loaded</span>
 <span class="sd">        &quot;&quot;&quot;</span></div></div>

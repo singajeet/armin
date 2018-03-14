@@ -1,0 +1,776 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>armin.api.share package &mdash; Armin 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Armin 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Armin" href="../modules.html"/>
+        <link rel="next" title="drivers" href="../plugins/modules.html"/>
+        <link rel="prev" title="armin.api.managers.source package" href="../api/armin.api.managers.source.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Armin
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html#api-s">API’s</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html#shared-resources">Shared Resources</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">armin.api.share package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-armin.api.share.constants">armin.api.share.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-armin.api.share.sessions">armin.api.share.sessions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-armin.api.share.utils">armin.api.share.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-armin.api.share.validations">armin.api.share.validations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-armin.api.share">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html#built-in-plugins">Built-in Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html#tests">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Armin</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../modules.html">Armin</a> &raquo;</li>
+        
+      <li>armin.api.share package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/shared/armin.api.share.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="armin-api-share-package">
+<h1>armin.api.share package<a class="headerlink" href="#armin-api-share-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-armin.api.share.constants">
+<span id="armin-api-share-constants-module"></span><h2>armin.api.share.constants module<a class="headerlink" href="#module-armin.api.share.constants" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-constants"></span><dl class="class">
+<dt id="armin.api.share.constants.ClearValue">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">ClearValue</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/constants.html#ClearValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.ClearValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="armin.api.share.constants.ClearValue.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/constants.html#ClearValue.clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.ClearValue.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.F">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">F</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#F"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.F" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">constantly._constants.Flags</span></code></p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.BOTH">
+<code class="descname">BOTH</code><em class="property"> = &lt;F=BOTH&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.BOTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.ERROR">
+<code class="descname">ERROR</code><em class="property"> = &lt;F=ERROR&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.FAILED">
+<code class="descname">FAILED</code><em class="property"> = &lt;F=FAILED&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.FAILED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.HARD">
+<code class="descname">HARD</code><em class="property"> = &lt;F=HARD&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.HARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.INVALID">
+<code class="descname">INVALID</code><em class="property"> = &lt;F=INVALID&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.INVALID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.NONE">
+<code class="descname">NONE</code><em class="property"> = &lt;F=NONE&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.PARTIAL">
+<code class="descname">PARTIAL</code><em class="property"> = &lt;F=PARTIAL&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.PARTIAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.POST">
+<code class="descname">POST</code><em class="property"> = &lt;F=POST&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.POST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.PRE">
+<code class="descname">PRE</code><em class="property"> = &lt;F=PRE&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.PRE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.SOFT">
+<code class="descname">SOFT</code><em class="property"> = &lt;F=SOFT&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.SOFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.SUCCESS">
+<code class="descname">SUCCESS</code><em class="property"> = &lt;F=SUCCESS&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.SUCCESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.VALID">
+<code class="descname">VALID</code><em class="property"> = &lt;F=VALID&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.VALID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.F.WARN">
+<code class="descname">WARN</code><em class="property"> = &lt;F=WARN&gt;</em><a class="headerlink" href="#armin.api.share.constants.F.WARN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.HC">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">HC</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#HC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.HC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constants for Hooks</p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.HC.ACTIVE_DRIVER">
+<code class="descname">ACTIVE_DRIVER</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.constants.HC.ACTIVE_DRIVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.HC.DB_URI">
+<code class="descname">DB_URI</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.constants.HC.DB_URI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.HC.ENTRY_POINT_NAMESPACE">
+<code class="descname">ENTRY_POINT_NAMESPACE</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.constants.HC.ENTRY_POINT_NAMESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.HC.HOOKS_TABLE">
+<code class="descname">HOOKS_TABLE</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.constants.HC.HOOKS_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.HC.REPO_DETAILS">
+<code class="descname">REPO_DETAILS</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.constants.HC.REPO_DETAILS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.N">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">N</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#N"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.N" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Docstring for Common.</p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.ALLOWED_CALL_TYPE">
+<code class="descname">ALLOWED_CALL_TYPE</code><em class="property"> = 'ALLOWED_CALL_TYPE'</em><a class="headerlink" href="#armin.api.share.constants.N.ALLOWED_CALL_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.AUTHOR">
+<code class="descname">AUTHOR</code><em class="property"> = 'AUTHOR'</em><a class="headerlink" href="#armin.api.share.constants.N.AUTHOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.CHUNK_SIZE">
+<code class="descname">CHUNK_SIZE</code><em class="property"> = 'CHUNK_SIZE'</em><a class="headerlink" href="#armin.api.share.constants.N.CHUNK_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.COMPANY">
+<code class="descname">COMPANY</code><em class="property"> = 'COMPANY'</em><a class="headerlink" href="#armin.api.share.constants.N.COMPANY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.CRC">
+<code class="descname">CRC</code><em class="property"> = 'CRC'</em><a class="headerlink" href="#armin.api.share.constants.N.CRC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.DB_URI">
+<code class="descname">DB_URI</code><em class="property"> = 'DB_URI'</em><a class="headerlink" href="#armin.api.share.constants.N.DB_URI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.DELETION_TYPE">
+<code class="descname">DELETION_TYPE</code><em class="property"> = 'DELETION_TYPE'</em><a class="headerlink" href="#armin.api.share.constants.N.DELETION_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.DESCRIPTION">
+<code class="descname">DESCRIPTION</code><em class="property"> = 'DESCRIPTION'</em><a class="headerlink" href="#armin.api.share.constants.N.DESCRIPTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.DETAILS">
+<code class="descname">DETAILS</code><em class="property"> = 'DETAILS'</em><a class="headerlink" href="#armin.api.share.constants.N.DETAILS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.ENTRY_POINT">
+<code class="descname">ENTRY_POINT</code><em class="property"> = 'ENTRY_POINT'</em><a class="headerlink" href="#armin.api.share.constants.N.ENTRY_POINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.MARKED_FOR_DELETION">
+<code class="descname">MARKED_FOR_DELETION</code><em class="property"> = 'MARKED_FOR_DELETION'</em><a class="headerlink" href="#armin.api.share.constants.N.MARKED_FOR_DELETION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.META_TABLE">
+<code class="descname">META_TABLE</code><em class="property"> = 'META_TABLE'</em><a class="headerlink" href="#armin.api.share.constants.N.META_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.NAME">
+<code class="descname">NAME</code><em class="property"> = 'NAME'</em><a class="headerlink" href="#armin.api.share.constants.N.NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.NAMESPACE">
+<code class="descname">NAMESPACE</code><em class="property"> = 'NAMESPACE'</em><a class="headerlink" href="#armin.api.share.constants.N.NAMESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.PASSWORD">
+<code class="descname">PASSWORD</code><em class="property"> = 'PASSWORD'</em><a class="headerlink" href="#armin.api.share.constants.N.PASSWORD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.PORT">
+<code class="descname">PORT</code><em class="property"> = 'PORT'</em><a class="headerlink" href="#armin.api.share.constants.N.PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.RAISE">
+<code class="descname">RAISE</code><em class="property"> = 'RAISE'</em><a class="headerlink" href="#armin.api.share.constants.N.RAISE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.RETURN">
+<code class="descname">RETURN</code><em class="property"> = 'RETURN'</em><a class="headerlink" href="#armin.api.share.constants.N.RETURN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.SOURCE_TABLE">
+<code class="descname">SOURCE_TABLE</code><em class="property"> = 'SOURCE_TABLE'</em><a class="headerlink" href="#armin.api.share.constants.N.SOURCE_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.SUBSCRIBERS">
+<code class="descname">SUBSCRIBERS</code><em class="property"> = 'SUBSCRIBERS'</em><a class="headerlink" href="#armin.api.share.constants.N.SUBSCRIBERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.TASK">
+<code class="descname">TASK</code><em class="property"> = 'action'</em><a class="headerlink" href="#armin.api.share.constants.N.TASK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.TEMP_FILE">
+<code class="descname">TEMP_FILE</code><em class="property"> = 'TEMP_FILE'</em><a class="headerlink" href="#armin.api.share.constants.N.TEMP_FILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.TEMP_WORKSPACE">
+<code class="descname">TEMP_WORKSPACE</code><em class="property"> = 'TEMP_WORKSPACE'</em><a class="headerlink" href="#armin.api.share.constants.N.TEMP_WORKSPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.URL">
+<code class="descname">URL</code><em class="property"> = 'URL'</em><a class="headerlink" href="#armin.api.share.constants.N.URL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.USERNAME">
+<code class="descname">USERNAME</code><em class="property"> = 'USERNAME'</em><a class="headerlink" href="#armin.api.share.constants.N.USERNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.N.VERSION">
+<code class="descname">VERSION</code><em class="property"> = 'VERSION'</em><a class="headerlink" href="#armin.api.share.constants.N.VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.V">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">V</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#V"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.V.FILE">
+<code class="descname">FILE</code><em class="property"> = 'FILE'</em><a class="headerlink" href="#armin.api.share.constants.V.FILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.V.HTML">
+<code class="descname">HTML</code><em class="property"> = 'HTML'</em><a class="headerlink" href="#armin.api.share.constants.V.HTML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.V.JSON">
+<code class="descname">JSON</code><em class="property"> = 'JSON'</em><a class="headerlink" href="#armin.api.share.constants.V.JSON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.V.XML">
+<code class="descname">XML</code><em class="property"> = 'XML'</em><a class="headerlink" href="#armin.api.share.constants.V.XML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.v_CONF">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">v_CONF</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_CONF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_CONF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for value based constants</p>
+<dl class="method">
+<dt id="armin.api.share.constants.v_CONF.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_CONF.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_CONF.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.share.constants.v_CONF.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>section</em>, <em>option</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_CONF.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_CONF.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an option value from a section</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.v_FSC">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">v_FSC</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_FSC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_FSC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constants defined to be used by FileSystemDriver</p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_FSC.ACTIVE_DRIVER">
+<code class="descname">ACTIVE_DRIVER</code><em class="property"> = 'None'</em><a class="headerlink" href="#armin.api.share.constants.v_FSC.ACTIVE_DRIVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_FSC.DB_URI">
+<code class="descname">DB_URI</code><em class="property"> = '/root/projects/python/armin/armin/api/resources/default.json.db'</em><a class="headerlink" href="#armin.api.share.constants.v_FSC.DB_URI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_FSC.ENTRY_POINT_NAMESPACE">
+<code class="descname">ENTRY_POINT_NAMESPACE</code><em class="property"> = 'file.system.drivers'</em><a class="headerlink" href="#armin.api.share.constants.v_FSC.ENTRY_POINT_NAMESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_FSC.FS_TABLE">
+<code class="descname">FS_TABLE</code><em class="property"> = 'file_system'</em><a class="headerlink" href="#armin.api.share.constants.v_FSC.FS_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_FSC.PACKAGE_EXT">
+<code class="descname">PACKAGE_EXT</code><em class="property"> = '.pkg'</em><a class="headerlink" href="#armin.api.share.constants.v_FSC.PACKAGE_EXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_FSC.REPO_DETAILS">
+<code class="descname">REPO_DETAILS</code><em class="property"> = {'DB_URI': '/root/projects/python/armin/armin/api/resources/default.json.db', 'SOURCE_TABLE': 'file_system'}</em><a class="headerlink" href="#armin.api.share.constants.v_FSC.REPO_DETAILS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.v_GC">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">v_GC</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_GC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_GC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Docstring for GenericConstants.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.v_PC">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">v_PC</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_PC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_PC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constants defined to be used by Package related files</p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_PC.ALLOWED_SCRIPT_EXT">
+<code class="descname">ALLOWED_SCRIPT_EXT</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.constants.v_PC.ALLOWED_SCRIPT_EXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_PC.ARG_LIST_FOR_SCRIPT_KEY">
+<code class="descname">ARG_LIST_FOR_SCRIPT_KEY</code><em class="property"> = 'setup_args'</em><a class="headerlink" href="#armin.api.share.constants.v_PC.ARG_LIST_FOR_SCRIPT_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_PC.SETUP_FILE_KEY">
+<code class="descname">SETUP_FILE_KEY</code><em class="property"> = 'setup_file'</em><a class="headerlink" href="#armin.api.share.constants.v_PC.SETUP_FILE_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_PC.SETUP_SECTION_KEY">
+<code class="descname">SETUP_SECTION_KEY</code><em class="property"> = 'setup_section'</em><a class="headerlink" href="#armin.api.share.constants.v_PC.SETUP_SECTION_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="armin.api.share.constants.v_SC">
+<em class="property">class </em><code class="descclassname">armin.api.share.constants.</code><code class="descname">v_SC</code><a class="reference internal" href="../_modules/armin/api/share/constants.html#v_SC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_SC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constants defined to be used by DefaultSourceDriver</p>
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_SC.ACTIVE_DRIVER">
+<code class="descname">ACTIVE_DRIVER</code><em class="property"> = 'default_driver'</em><a class="headerlink" href="#armin.api.share.constants.v_SC.ACTIVE_DRIVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_SC.DB_URI">
+<code class="descname">DB_URI</code><em class="property"> = '/root/projects/python/armin/armin/api/resources/default.json.db'</em><a class="headerlink" href="#armin.api.share.constants.v_SC.DB_URI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_SC.ENTRY_POINT_NAMESPACE">
+<code class="descname">ENTRY_POINT_NAMESPACE</code><em class="property"> = 'source.drivers'</em><a class="headerlink" href="#armin.api.share.constants.v_SC.ENTRY_POINT_NAMESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_SC.PACKAGE_EXT">
+<code class="descname">PACKAGE_EXT</code><em class="property"> = '.pkg'</em><a class="headerlink" href="#armin.api.share.constants.v_SC.PACKAGE_EXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_SC.REPO_DETAILS">
+<code class="descname">REPO_DETAILS</code><em class="property"> = {'DB_URI': '/root/projects/python/armin/armin/api/resources/default.json.db', 'SOURCE_TABLE': 'sources'}</em><a class="headerlink" href="#armin.api.share.constants.v_SC.REPO_DETAILS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="armin.api.share.constants.v_SC.SOURCE_TABLE">
+<code class="descname">SOURCE_TABLE</code><em class="property"> = 'sources'</em><a class="headerlink" href="#armin.api.share.constants.v_SC.SOURCE_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.share.sessions">
+<span id="armin-api-share-sessions-module"></span><h2>armin.api.share.sessions module<a class="headerlink" href="#module-armin.api.share.sessions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-package"></span><dl class="class">
+<dt id="armin.api.share.sessions.Web">
+<em class="property">class </em><code class="descclassname">armin.api.share.sessions.</code><code class="descname">Web</code><a class="reference internal" href="../_modules/armin/api/share/sessions.html#Web"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.sessions.Web" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides session for accessing web resources</p>
+<dl class="attribute">
+<dt id="armin.api.share.sessions.Web.SESSION">
+<code class="descname">SESSION</code><em class="property"> = None</em><a class="headerlink" href="#armin.api.share.sessions.Web.SESSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.share.utils">
+<span id="armin-api-share-utils-module"></span><h2>armin.api.share.utils module<a class="headerlink" href="#module-armin.api.share.utils" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-source_driver"></span><dl class="function">
+<dt id="armin.api.share.utils.connect_to_meta">
+<code class="descclassname">armin.api.share.utils.</code><code class="descname">connect_to_meta</code><span class="sig-paren">(</span><em>meta_repo_details: Type[Dict], name: str) -&gt; (typing.Type[armin.api.share.constants.F], typing.Any</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/utils.html#connect_to_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.utils.connect_to_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to metadata database using the details provided asparameters in the constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>meta_repo_details</strong> (<em>Dict</em>) – Repository details for making connection and query</li>
+<li><strong>name</strong> (<em>str</em>) – Name of the item that needs to be queried</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns flag Success or Failed and details in case of failure and table record in case of success</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">status (Tuple)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="armin.api.share.utils.get_meta_table">
+<code class="descclassname">armin.api.share.utils.</code><code class="descname">get_meta_table</code><span class="sig-paren">(</span><em>meta_repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/utils.html#get_meta_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.utils.get_meta_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the table from meta repo based on details passed as args</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.share.validations">
+<span id="armin-api-share-validations-module"></span><h2>armin.api.share.validations module<a class="headerlink" href="#module-armin.api.share.validations" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-validations"></span><dl class="class">
+<dt id="armin.api.share.validations.Validator">
+<em class="property">class </em><code class="descclassname">armin.api.share.validations.</code><code class="descname">Validator</code><span class="sig-paren">(</span><em>action_type='RAISE'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides various kind of validation functions</p>
+<dl class="method">
+<dt id="armin.api.share.validations.Validator.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>action_type='RAISE'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action_type</strong> (<a class="reference internal" href="#armin.api.share.constants.N" title="armin.api.share.constants.N"><em>N</em></a>) – Action that needs to be performed, Raise error or Return False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.share.validations.Validator.not_empty">
+<code class="descname">not_empty</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator.not_empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.not_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if arg is not empty</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.share.validations.Validator.not_none">
+<code class="descname">not_none</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator.not_none"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.not_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check arg value and change status to invalid if it is none</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg</strong> – check value for not none</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.share.validations.Validator.raise_or_invalidate">
+<code class="descname">raise_or_invalidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator.raise_or_invalidate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.raise_or_invalidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise exception or set status as invalid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.share.validations.Validator.reset_if_validation_done">
+<code class="descname">reset_if_validation_done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator.reset_if_validation_done"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.reset_if_validation_done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the validator if validation ops has been completed                (by calling the validate method()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin.api.share.validations.Validator.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/share/validations.html#Validator.validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns status of all validations done</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-armin.api.share">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-armin.api.share" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../plugins/modules.html" class="btn btn-neutral float-right" title="drivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api/armin.api.managers.source.html" class="btn btn-neutral" title="armin.api.managers.source package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Ajeet Singh.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

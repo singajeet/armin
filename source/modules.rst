@@ -4,13 +4,21 @@ Armin
 .. toctree::
    :maxdepth: 4
 
-   armin
-   armin.api
-   armin.api.managers
-   armin.api.managers.hook
-   armin.api.managers.package
-   armin.api.managers.io
-   armin.api.managers.source
+   armin.api.managers.package.overview
+
+API's
+=====
+
+.. toctree::
+   :maxdepth: 4
+
+   api/armin
+   api/armin.api
+   api/armin.api.managers
+   api/armin.api.managers.hook
+   api/armin.api.managers.package
+   api/armin.api.managers.io
+   api/armin.api.managers.source
 
 Shared Resources
 ================
@@ -18,7 +26,7 @@ Shared Resources
 .. toctree::
    :maxdepth: 4
 
-   armin.api.share
+   shared/armin.api.share
 
 Built-in Plugins
 ================

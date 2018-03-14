@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#tests">Tests</a></li>
@@ -171,7 +172,7 @@
 <span class="kn">from</span> <span class="nn">armin.api.managers.hook.interface</span> <span class="k">import</span> <span class="n">AbstractHook</span><span class="p">,</span> <span class="n">AbstractWrapper</span>
 <span class="kn">from</span> <span class="nn">armin.api.managers.hook.manager</span> <span class="k">import</span> <span class="n">HooksManager</span>
 
-<div class="viewcode-block" id="expose_hook"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook">[docs]</a><span class="k">class</span> <span class="nc">expose_hook</span><span class="p">(</span><span class="n">AbstractHook</span><span class="p">):</span>
+<div class="viewcode-block" id="expose_hook"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook">[docs]</a><span class="k">class</span> <span class="nc">expose_hook</span><span class="p">(</span><span class="n">AbstractHook</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Register a method or function as hook point</span>
 <span class="sd">    Args:</span>
 <span class="sd">    namespace (str): Register an hook under given namespace. Any other callback\</span>
@@ -199,24 +200,24 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to load decorator Wrapper class. Please check your config and make sure driver of type Hooks-Type is installed!&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="expose_hook.run_pre_callbacks"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook.run_pre_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_pre_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="expose_hook.run_pre_callbacks"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook.run_pre_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_pre_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Runs all the callback methods registered under this namespace pre-execution</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hook_mgr</span><span class="o">.</span><span class="n">get_pre_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">):</span></div>
                 <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<div class="viewcode-block" id="expose_hook.run_post_callbacks"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook.run_post_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_post_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="expose_hook.run_post_callbacks"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.decorator.expose_hook.run_post_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">run_post_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Runs all the callback methods registered under this namespace post-execution</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hook_mgr</span><span class="o">.</span><span class="n">get_post_callback_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span><span class="p">):</span></div></div>
                 <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="hook_it"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.hook_it">[docs]</a><span class="k">class</span> <span class="nc">hook_it</span><span class="p">(</span><span class="n">AbstractHook</span><span class="p">):</span>
+<div class="viewcode-block" id="hook_it"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.decorator.hook_it">[docs]</a><span class="k">class</span> <span class="nc">hook_it</span><span class="p">(</span><span class="n">AbstractHook</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class to hook a function/callback to a already exposed/registered hook based on a namespace</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="hook_it.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.decorator.hook_it.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">hook_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]):</span>
+<div class="viewcode-block" id="hook_it.__init__"><a class="viewcode-back" href="../../../../../api/armin.api.managers.hook.html#armin.api.managers.hook.decorator.hook_it.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">hook_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">hook_it</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">namespace</span><span class="p">,</span> <span class="n">hook_type</span><span class="p">)</span></div>

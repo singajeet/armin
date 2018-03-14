@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#tests">Tests</a></li>
@@ -170,7 +171,7 @@
 <span class="kn">from</span> <span class="nn">armin.api.managers.base_manager</span> <span class="k">import</span> <span class="n">BaseDriverManager</span>
 
 
-<div class="viewcode-block" id="FileSystemManager"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager">[docs]</a><span class="k">class</span> <span class="nc">FileSystemManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager">[docs]</a><span class="k">class</span> <span class="nc">FileSystemManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;DriverManager for accessing file system. This manager will be \</span>
 <span class="sd">            available under namespace...</span>
 
@@ -186,13 +187,13 @@
             <span class="bp">cls</span><span class="o">.</span><span class="n">__single_file_system_mgr</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__single_file_system_mgr</span>
 
-<div class="viewcode-block" id="FileSystemManager.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager.__init__"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;FileSystemManager default constructor</span>
 
 <span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="nb">super</span><span class="p">(</span><span class="n">FileSystemManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
-<div class="viewcode-block" id="FileSystemManager.load_configuration"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager.load_configuration"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">v_FSC</span><span class="o">.</span><span class="n">ACTIVE_DRIVER</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span> <span class="o">=</span> <span class="n">v_FSC</span><span class="o">.</span><span class="n">ACTIVE_DRIVER</span>
         <span class="k">else</span><span class="p">:</span>
@@ -208,13 +209,13 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span></div>
                 <span class="s1">&#39;Entry point name space is required. Check configuration&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FileSystemManager.get_invoke_args"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager.get_invoke_args"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.get_invoke_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_invoke_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the arguments required by FileSystemManager</span>
 
 <span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_active_driver_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repo_details</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FileSystemManager.create_file"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.create_file">[docs]</a>    <span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="FileSystemManager.create_file"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.create_file">[docs]</a>    <span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                     <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                     <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
@@ -236,7 +237,7 @@
         <span class="k">else</span><span class="p">:</span></div>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FileSystemManager.create_directory"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.create_directory">[docs]</a>    <span class="k">def</span> <span class="nf">create_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager.create_directory"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.create_directory">[docs]</a>    <span class="k">def</span> <span class="nf">create_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new dir using the information provided as args</span>
 
 <span class="sd">        Args:</span>
@@ -254,7 +255,7 @@
         <span class="k">else</span><span class="p">:</span></div>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FileSystemManager.open_file"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.open_file">[docs]</a>    <span class="k">def</span> <span class="nf">open_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager.open_file"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.open_file">[docs]</a>    <span class="k">def</span> <span class="nf">open_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Opens an existing file using the information provided as args</span>
 
 <span class="sd">        Args:</span>
@@ -273,7 +274,7 @@
         <span class="k">else</span><span class="p">:</span></div>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FileSystemManager.open_directory"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.open_directory">[docs]</a>    <span class="k">def</span> <span class="nf">open_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="FileSystemManager.open_directory"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.manager.FileSystemManager.open_directory">[docs]</a>    <span class="k">def</span> <span class="nf">open_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new dir using the information provided as args</span>
 
 <span class="sd">        Args:</span>

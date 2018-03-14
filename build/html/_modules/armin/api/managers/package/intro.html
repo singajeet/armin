@@ -92,6 +92,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#api-s">API’s</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#shared-resources">Shared Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html#tests">Tests</a></li>
@@ -168,7 +169,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 
-<div class="viewcode-block" id="Intro"><a class="viewcode-back" href="../../../../../armin.api.managers.package.html#armin.api.managers.package.intro.Intro">[docs]</a><span class="k">class</span> <span class="nc">Intro</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Intro"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.intro.Intro">[docs]</a><span class="k">class</span> <span class="nc">Intro</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Introduction to Package</span>
 
@@ -216,21 +217,26 @@
 <span class="sd">    () IDependencyResolver - [DependencyResolver]</span>
 <span class="sd">    () IBuildSystem - [BuildSystem]</span>
 <span class="sd">    () IInstaller - [Installer]</span>
-<span class="sd">    () IWrapper - [Wrapper]</span>
+<span class="sd">    () IWrapper - [APIWrapper]</span>
 
 <span class="sd">    () HTTP</span>
 
 <span class="sd">    node &quot;Armin&quot; {</span>
 <span class="sd">    [Armin Runtime]</span>
+<span class="sd">    [Package Manager]</span>
+<span class="sd">    [FileSystem Manager]</span>
+<span class="sd">    [Component Manager]</span>
+<span class="sd">    [APIPublisher]</span>
+<span class="sd">    [...]</span>
 <span class="sd">    }</span>
 
 <span class="sd">    database &quot;MetaRepo&quot; {</span>
 <span class="sd">    frame &quot;Packages&quot; {</span>
-<span class="sd">    [Package Manager]</span>
+<span class="sd">    [Package Meta]</span>
 <span class="sd">    }</span>
 
 <span class="sd">    frame &quot;FileSystem&quot; {</span>
-<span class="sd">    [FileSystem Manager]</span>
+<span class="sd">    [FileSystem Meta]</span>
 <span class="sd">    }</span>
 <span class="sd">    }</span>
 
@@ -241,7 +247,12 @@
 <span class="sd">    [DependencyResolver] ..&gt; HTTP</span>
 <span class="sd">    [DependencyResolver] --&gt; [BuildSystem]</span>
 <span class="sd">    [BuildSystem] --&gt; [Installer]</span>
-
+<span class="sd">    [Installer] ..&gt; [FileSystem Manager]</span>
+<span class="sd">    [FileSystem Manager] ..&gt; [FileSystem Meta]</span>
+<span class="sd">    [Installer] ..&gt; [Package Manager]</span>
+<span class="sd">    [Package Manager] ..&gt; [Package Meta]</span>
+<span class="sd">    [Installer] --&gt; [APIWrapper]</span>
+<span class="sd">    [APIWrapper] ..&gt; [APIPublisher]</span>
 <span class="sd">    @enduml</span>
 
 <span class="sd">    &quot;&quot;&quot;</span></div>
