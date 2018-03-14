@@ -190,45 +190,85 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>An base class for an source system</p>
 <dl class="method">
+<dt id="armin.api.managers.base_interface.AbstractDriver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_interface.html#AbstractDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_interface.AbstractDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for abstract source driver class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Name of the source system</li>
+<li><strong>repo_details</strong> (<em>Dict</em>) – A dict containing config to connect to meta repository</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin.api.managers.base_interface.AbstractDriver.connect_to_meta">
 <code class="descname">connect_to_meta</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_interface.html#AbstractDriver.connect_to_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_interface.AbstractDriver.connect_to_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>When overridden in derived class provides function to connect with meta repo.                Meta repo stores information about the system like connection details, etc</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>status (Type[F], str): Flag F  based on connection status, i.e.,                         connected or not connected and message string in case of failure</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Flag F  based on connection status, i.e.,                         connected or not connected and message string in case of failure</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">status (Type[<a class="reference internal" href="armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>], str)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.base_interface.AbstractDriver.save">
 <code class="descname">save</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_interface.html#AbstractDriver.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_interface.AbstractDriver.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the details of source in meta repo</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>status (Type[F]): Flag F</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Flag F</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">status (Type[<a class="reference internal" href="armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>])</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.base_interface.AbstractDriver.set_meta">
 <code class="descname">set_meta</code><span class="sig-paren">(</span><em>details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_interface.html#AbstractDriver.set_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_interface.AbstractDriver.set_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds meta details to be consumed by driver</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>details (Dict): A meta details dict having key-value pairs to be used by driver</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>details</strong> (<em>Dict</em>) – A meta details dict having key-value pairs to be used by driver</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.base_interface.AbstractDriver.update">
 <code class="descname">update</code><span class="sig-paren">(</span><em>details: Type[Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_interface.html#AbstractDriver.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_interface.AbstractDriver.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update details of source in meta repo</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>details (Dict): Details of source system in dict form</dd>
-<dt>Returns:</dt>
-<dd>status (Type[F], str): Flag F and message</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>details</strong> (<em>Dict</em>) – Details of source system in dict form</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Flag F and message</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">status (Type[<a class="reference internal" href="armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>], str)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -242,23 +282,41 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>An abstract BaseDriverManager to provide default functionality    to all derived managers.</p>
 <dl class="method">
+<dt id="armin.api.managers.base_manager.BaseDriverManager.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_manager.html#BaseDriverManager.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_manager.BaseDriverManager.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>BaseDriverManager constructor</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin.api.managers.base_manager.BaseDriverManager.get_driver">
 <code class="descname">get_driver</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], typing.Type[armin.api.managers.base_interface.AbstractDriver]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_manager.html#BaseDriverManager.get_driver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_manager.BaseDriverManager.get_driver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns status and instance of active driver</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>result (F, AbstractDriver): Returns status flag and instance of active        driver</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns status flag and instance of active        driver</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">result (<a class="reference internal" href="armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>, <a class="reference internal" href="#armin.api.managers.base_interface.AbstractDriver" title="armin.api.managers.base_interface.AbstractDriver">AbstractDriver</a>)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.base_manager.BaseDriverManager.get_invoke_args">
 <code class="descname">get_invoke_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[Tuple]<a class="reference internal" href="_modules/armin/api/managers/base_manager.html#BaseDriverManager.get_invoke_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_manager.BaseDriverManager.get_invoke_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an tuple of args that needs to be passed to driver        while invoking it. Thus should be overridden by derived class</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>invoke_args (Tuple): Tuple of args that needs to be passed        the driver</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Tuple of args that needs to be passed        the driver</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">invoke_args (Tuple)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -277,9 +335,15 @@
 <dt id="armin.api.managers.base_manager.BaseDriverManager.load_driver">
 <code class="descname">load_driver</code><span class="sig-paren">(</span><em>driver_name: str = None, invoke_args: Type[Tuple] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/base_manager.html#BaseDriverManager.load_driver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.base_manager.BaseDriverManager.load_driver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the active driver provided in the configuration or the        driver having its name passes as argument to this function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>driver_name</strong> (<em>str</em>) – Name of the driver which needs to be loaded.        if no name is provided, active driver will be loaded from configuration</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>driver_name (str): Name of the driver which needs to be loaded.        if no name is provided, active driver will be loaded from configuration</dd>
 <dt>import (optional)</dt>
 <dd>invoke_args (Tuple): A tuple of arguments that needs to be passed        to the driver (optional)</dd>
 </dl>

@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Armin 0.0.1 documentation" href="../index.html"/>
         <link rel="up" title="drivers" href="modules.html"/>
-        <link rel="next" title="armin.api.tests package" href="../armin.api.tests.html"/>
+        <link rel="next" title="armin_ext.template package" href="armin_ext.template.html"/>
         <link rel="prev" title="armin_ext.drivers.script package" href="armin_ext.drivers.script.html"/> 
 
   
@@ -105,6 +105,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-armin_ext.drivers.source.source_driver">armin_ext.drivers.source.source_driver module</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.template.html">armin_ext.template package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.installer.html">armin_ext.installer package</a></li>
 </ul>
 </li>
 </ul>
@@ -190,48 +192,91 @@
 <dd><p>Bases: <a class="reference internal" href="../armin.api.managers.source.html#armin.api.managers.source.interface.AbstractSourceDriver" title="armin.api.managers.source.interface.AbstractSourceDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.source.interface.AbstractSourceDriver</span></code></a></p>
 <p>Default implementation of source system driver using HTTP protocol</p>
 <dl class="method">
+<dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of the source system driver</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.connect_to_meta">
 <code class="descname">connect_to_meta</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.connect_to_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.connect_to_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to metadata database using the details provided as                parameters in the constructor</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>status (Tuple): Returns flag Success or Failed and details                    in case of failure</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns flag Success or Failed and details                    in case of failure</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">status (Tuple)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.get_output">
 <code class="descname">get_output</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], typing.Any</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.get_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.get_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the output of the task performed on source</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>(F, Any): returns the result flag F along with result</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">returns the result flag F along with result</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference internal" href="../armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>, Any)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.perform_task">
 <code class="descname">perform_task</code><span class="sig-paren">(</span><em>task: str = None</em>, <em>expected_result_type: Type[armin.api.share.constants.V] = 'JSON'</em><span class="sig-paren">)</span> &#x2192; Type[_asyncio.Future]<a class="reference internal" href="../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.perform_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.perform_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls the task on source system</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>task (str): Name of the task to perform                     (optional, default = action from configuration)
-expected_result_type (V): Returns the type of result                     (V.JSON, V.FILE…) (optional, default is V.JSON)</dd>
-<dt>Returns:</dt>
-<dd>response (Response): An instance of Response</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>task</strong> (<em>str</em>) – Name of the task to perform                     (optional, default = action from configuration)</li>
+<li><strong>expected_result_type</strong> (<a class="reference internal" href="../armin.api.share.html#armin.api.share.constants.V" title="armin.api.share.constants.V"><em>V</em></a>) – Returns the type of result                     (V.JSON, V.FILE…) (optional, default is V.JSON)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An instance of Response</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">response (Response)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.prepare_to_connect">
 <code class="descname">prepare_to_connect</code><span class="sig-paren">(</span><em>loop: Type[asyncio.unix_events._UnixSelectorEventLoop]) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.prepare_to_connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.prepare_to_connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connects to the source system using details available in dict</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>loop (asyncio.loop): Current event loop running on current or some                    other thread</dd>
-<dt>Returns:</dt>
-<dd>status (F, str): Success or Failed and message in case of failure</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>loop</strong> (<em>asyncio.loop</em>) – Current event loop running on current or some                    other thread</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Success or Failed and message in case of failure</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">status (<a class="reference internal" href="../armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>, str)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -244,12 +289,18 @@ expected_result_type (V): Returns the type of result                     (V.JSON
 <dt id="armin_ext.drivers.source.source_driver.DefaultSourceDriver.update">
 <code class="descname">update</code><span class="sig-paren">(</span><em>details: Type[Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/source/source_driver.html#DefaultSourceDriver.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.source.source_driver.DefaultSourceDriver.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the details of source system in meta repo.                 if details are passed as argument same will be used to override                existing details in repo</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>details (dict): An dict of source system details</dd>
-<dt>Returns:</dt>
-<dd>status (F, msg): Success or Failed and message in case of failure</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>details</strong> (<em>dict</em>) – An dict of source system details</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Success or Failed and message in case of failure</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">status (<a class="reference internal" href="../armin.api.share.html#armin.api.share.constants.F" title="armin.api.share.constants.F">F</a>, msg)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -267,7 +318,7 @@ expected_result_type (V): Returns the type of result                     (V.JSON
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../armin.api.tests.html" class="btn btn-neutral float-right" title="armin.api.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="armin_ext.template.html" class="btn btn-neutral float-right" title="armin_ext.template package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="armin_ext.drivers.script.html" class="btn btn-neutral" title="armin_ext.drivers.script package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

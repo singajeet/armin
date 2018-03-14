@@ -172,10 +172,10 @@
 <div class="viewcode-block" id="AbstractHook"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractHook">[docs]</a><span class="k">class</span> <span class="nc">AbstractHook</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Abstract class for an hook</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">allow_call_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">BOTH</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractHook.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractHook.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">allow_call_type</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">BOTH</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span> <span class="o">=</span> <span class="n">namespace</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_namespace</span> <span class="o">=</span> <span class="n">namespace</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_allow_call_type</span> <span class="o">=</span> <span class="n">allow_call_type</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Callable</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
@@ -197,9 +197,9 @@
 <div class="viewcode-block" id="AbstractWrapper"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractWrapper">[docs]</a><span class="k">class</span> <span class="nc">AbstractWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;An abstract wrapper class for decorators</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractWrapper.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.hook.html#armin.api.managers.hook.interface.AbstractWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;default constructor</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

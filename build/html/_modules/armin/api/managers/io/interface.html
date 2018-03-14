@@ -179,7 +179,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractIODriver.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractIODriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor for an io object</span>
 
 <span class="sd">        Args:</span>
@@ -194,7 +194,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_os_release</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_os_version</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_os_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name_on_network</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_os_release</span><span class="p">,</span>
+        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_os_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name_on_network</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_os_release</span><span class="p">,</span></div>
          <span class="bp">self</span><span class="o">.</span><span class="n">_os_version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
 
     <span class="nd">@property</span>
@@ -214,7 +214,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="AbstractDirDriver.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                  <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">create_new</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -230,7 +230,7 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">AbstractDirDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__create_new_flag</span> <span class="o">=</span> <span class="n">create_new</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_overwrite</span> <span class="o">=</span> <span class="n">overwrite</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_exists</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_exists</span> <span class="o">=</span> <span class="kc">False</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractDirDriver.get_handle"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.get_handle">[docs]</a>    <span class="k">def</span> <span class="nf">get_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -344,7 +344,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="AbstractFileDriver.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractFileDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">create_new</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -358,7 +358,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_base_path</span> <span class="o">=</span> <span class="n">base_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_base_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base_name</span> <span class="o">=</span> <span class="kc">None</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ext</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
@@ -464,7 +464,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="AbstractPackageFileDriver.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractPackageFileDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">create_new</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -473,7 +473,7 @@
         <span class="sd">&quot;&quot;&quot;Default constructor of an package file</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">AbstractPackageFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AbstractPackageFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span></div>
             <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractPackageFileDriver.extract_to"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractPackageFileDriver.extract_to">[docs]</a>    <span class="k">def</span> <span class="nf">extract_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
@@ -497,7 +497,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="AbstractScriptFileDriver.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                  <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">create_new</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -508,7 +508,7 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">AbstractScriptFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
+            <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_args_list_for_script</span> <span class="o">=</span> <span class="n">arg_list</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.get_script_path"><a class="viewcode-back" href="../../../../../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_script_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_script_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

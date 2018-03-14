@@ -463,6 +463,12 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for value based constants</p>
 <dl class="method">
+<dt id="armin.api.share.constants.v_CONF.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/share/constants.html#v_CONF.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_CONF.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin.api.share.constants.v_CONF.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>section</em>, <em>option</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/share/constants.html#v_CONF.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.constants.v_CONF.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an option value from a section</p>
@@ -600,13 +606,24 @@
 <dt id="armin.api.share.utils.connect_to_meta">
 <code class="descclassname">armin.api.share.utils.</code><code class="descname">connect_to_meta</code><span class="sig-paren">(</span><em>meta_repo_details: Type[Dict], name: str) -&gt; (typing.Type[armin.api.share.constants.F], typing.Any</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/share/utils.html#connect_to_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.utils.connect_to_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to metadata database using the details provided asparameters in the constructor</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>meta_repo_details (Dict): Repository details for making connection and query
-name (str): Name of the item that needs to be queried</dd>
-<dt>Returns:</dt>
-<dd>status (Tuple): Returns flag Success or Failed and details in case of failure and table record in case of success</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>meta_repo_details</strong> (<em>Dict</em>) – Repository details for making connection and query</li>
+<li><strong>name</strong> (<em>str</em>) – Name of the item that needs to be queried</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns flag Success or Failed and details in case of failure and table record in case of success</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">status (Tuple)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -624,6 +641,20 @@ name (str): Name of the item that needs to be queried</dd>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides various kind of validation functions</p>
 <dl class="method">
+<dt id="armin.api.share.validations.Validator.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>action_type='RAISE'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/share/validations.html#Validator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action_type</strong> (<a class="reference internal" href="#armin.api.share.constants.N" title="armin.api.share.constants.N"><em>N</em></a>) – Action that needs to be performed, Raise error or Return False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin.api.share.validations.Validator.not_empty">
 <code class="descname">not_empty</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/share/validations.html#Validator.not_empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.not_empty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if arg is not empty</p>
@@ -633,10 +664,14 @@ name (str): Name of the item that needs to be queried</dd>
 <dt id="armin.api.share.validations.Validator.not_none">
 <code class="descname">not_none</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/share/validations.html#Validator.not_none"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.share.validations.Validator.not_none" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check arg value and change status to invalid if it is none</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>arg: check value for not none</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>arg</strong> – check value for not none</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">

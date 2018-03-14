@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>armin_ext.installer.script &mdash; Armin 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Armin 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Armin
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Armin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html#shared-resources">Shared Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html#built-in-plugins">Built-in Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html#tests">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Armin</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>armin_ext.installer.script</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for armin_ext.installer.script</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: file</span>
+<span class="sd">   :platform: Unix, Windows</span>
+<span class="sd">   :synopsis: represents an script file on fs</span>
+
+<span class="sd">.. moduleauthor:: Ajeet Singh &lt;singh.ajeet@gmail.com&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Type</span>
+<span class="kn">from</span> <span class="nn">configparser</span> <span class="k">import</span> <span class="n">ConfigParser</span>
+<span class="kn">from</span> <span class="nn">armin.api.managers.io.interface</span> <span class="k">import</span> <span class="n">AbstractScriptFileDriver</span>
+<span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">v_PC</span><span class="p">,</span> <span class="n">F</span>
+
+
+<div class="viewcode-block" id="ScriptFileDriver"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver">[docs]</a><span class="k">class</span> <span class="nc">ScriptFileDriver</span><span class="p">(</span><span class="n">AbstractScriptFileDriver</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represents a physical script file.\</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ScriptFileDriver.__init__"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">package_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Default constructor of script file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#Read config file first to get setup file name and other attrs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">package_path</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">package_path</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;setup.ini&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">package_path</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;setup.ini&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to locate setup config&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__setup_config_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__setup_file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v_PC</span><span class="o">.</span><span class="n">SETUP_SECTION_KEY</span><span class="p">,</span> <span class="n">v_PC</span><span class="o">.</span><span class="n">SETUP_FILE_KEY</span><span class="p">)</span>
+        <span class="c1">#call super constructor with the setup_file_name and package_path as its args</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PackageSetupFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__setup_file_name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">package_path</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1">#Init other attribs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__allowed_setup_file_ext</span> <span class="o">=</span> <span class="n">v_PC</span><span class="o">.</span><span class="n">ALLOWED_SCRIPT_EXT</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v_PC</span><span class="o">.</span><span class="n">SETUP_SECTION_KEY</span><span class="p">,</span> <span class="n">v_PC</span><span class="o">.</span><span class="n">ARG_LIST_FOR_SCRIPT_KEY</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__allowed_setup_file_ext</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unknown setup file format. Only following formats are allowed </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__allowed_setup_file_ext</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span></div>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to find setup file in current package&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ScriptFileDriver.get_script_name"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.get_script_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_script_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the name of the script</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<div class="viewcode-block" id="ScriptFileDriver.get_args_list_for_script"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.get_args_list_for_script">[docs]</a>    <span class="k">def</span> <span class="nf">get_args_list_for_script</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an list containing the args to be passed to setup script</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span>
+
+<div class="viewcode-block" id="ScriptFileDriver.execute_script"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.execute_script">[docs]</a>    <span class="k">def</span> <span class="nf">execute_script</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Executes the setup script and returns the results for same</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_process</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">_stdout</span><span class="p">,</span> <span class="n">_stderr</span><span class="p">)</span> <span class="o">=</span> <span class="n">_process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">_stderr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span> <span class="p">,</span><span class="s1">&#39;Error while executting setup script: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">_stderr</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">_stdout</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Ajeet Singh.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

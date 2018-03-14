@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Armin 0.0.1 documentation" href="../index.html"/>
         <link rel="up" title="drivers" href="modules.html"/>
-        <link rel="next" title="armin.api.tests package" href="../armin.api.tests.html"/>
+        <link rel="next" title="armin_ext.drivers.source package" href="armin_ext.drivers.source.html"/>
         <link rel="prev" title="armin_ext.drivers.package package" href="armin_ext.drivers.package.html"/> 
 
   
@@ -104,6 +104,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-armin_ext.drivers.script.file">armin_ext.drivers.script.file module</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.source.html">armin_ext.drivers.source package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.template.html">armin_ext.template package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.installer.html">armin_ext.installer package</a></li>
 </ul>
 </li>
 </ul>
@@ -189,6 +192,12 @@
 <dd><p>Bases: <a class="reference internal" href="../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver" title="armin.api.managers.io.interface.AbstractScriptFileDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractScriptFileDriver</span></code></a></p>
 <p>Represents a physical script file.</p>
 <dl class="method">
+<dt id="armin_ext.drivers.script.file.ScriptFileDriver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict], create_new: bool = False, base_path: str = None, overwrite: str = False, arg_list: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/script/file.html#ScriptFileDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.script.file.ScriptFileDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor of script file</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin_ext.drivers.script.file.ScriptFileDriver.execute_script">
 <code class="descname">execute_script</code><span class="sig-paren">(</span><em>) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/script/file.html#ScriptFileDriver.execute_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.script.file.ScriptFileDriver.execute_script" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes the setup script and returns the results for same</p>
@@ -239,7 +248,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../armin.api.tests.html" class="btn btn-neutral float-right" title="armin.api.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="armin_ext.drivers.source.html" class="btn btn-neutral float-right" title="armin_ext.drivers.source package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="armin_ext.drivers.package.html" class="btn btn-neutral" title="armin_ext.drivers.package package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

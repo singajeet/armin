@@ -259,7 +259,7 @@
             <span class="bp">cls</span><span class="o">.</span><span class="n">__single_v_conf</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__single_v_conf</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="v_CONF.__init__"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.constants.v_CONF.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Default constructor</span>
 
@@ -274,7 +274,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">CONFIG</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="p">(</span><span class="n">interpolation</span><span class="o">=</span><span class="n">ExtendedInterpolation</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CONFIG_FILE</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;Default&#39;</span><span class="p">,</span> <span class="s1">&#39;app_root_path&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__parent_path</span><span class="p">))</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CONFIG_FILE</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conffile</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CONFIG_FILE</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conffile</span><span class="p">:</span></div>
             <span class="bp">self</span><span class="o">.</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">conffile</span><span class="p">)</span>
 
 <div class="viewcode-block" id="v_CONF.get"><a class="viewcode-back" href="../../../../armin.api.share.html#armin.api.share.constants.v_CONF.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>

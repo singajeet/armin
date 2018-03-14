@@ -172,7 +172,7 @@
 
 
 <div class="viewcode-block" id="SourceDriverManager"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager">[docs]</a><span class="k">class</span> <span class="nc">SourceDriverManager</span><span class="p">(</span><span class="n">BaseDriverManager</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;DriverManager for managing source system related drivers. The drivers registered under namespace &#39;api.source_sys_driver</span>
+    <span class="sd">&quot;&quot;&quot;DriverManager for managing source system related drivers.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">__single_source_driver_mgr</span> <span class="o">=</span> <span class="kc">None</span>
@@ -184,15 +184,20 @@
             <span class="bp">cls</span><span class="o">.</span><span class="n">__single_source_driver_mgr</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__single_source_driver_mgr</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;SourceDriverManager constructor to initialize the singleton instance</span>
-<span class="sd">        Below is an example of using this class:</span>
+<div class="viewcode-block" id="SourceDriverManager.__init__"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;SourceDriverManager constructor to initialize the singleton instance of this class.</span>
+
+<span class="sd">        Example:</span>
 
 <span class="sd">            &gt;&gt;&gt; from armin.api.managers.source.manager import SourceDriverManager</span>
 <span class="sd">            &gt;&gt;&gt; mgr = SourceDriverManager()</span>
 <span class="sd">            &gt;&gt;&gt; mgr is not None</span>
 <span class="sd">            True</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            As of now this class is not thread safe and is a singleton which will be shared among many objects.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="nb">super</span><span class="p">(</span><span class="n">SourceDriverManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="SourceDriverManager.load_configuration"><a class="viewcode-back" href="../../../../../armin.api.managers.source.html#armin.api.managers.source.manager.SourceDriverManager.load_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">load_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>

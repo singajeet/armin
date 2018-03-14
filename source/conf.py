@@ -42,11 +42,14 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinxcontrib.plantuml',
     'sphinx.ext.graphviz',
-    'sphinx.ext.githubpages'
+    'sphinx.ext.githubpages',
+    'sphinx.ext.napoleon'
              ]
 
-#plantuml = 'java -jar ~/projects/plantuml/plantuml.jar'
+#Napoleon settings
+napoleon_include_init_with_doc = True
 
+#Plantuml settings
 plantuml = 'java -jar %s' % os.path.abspath(os.path.join(os.path.expanduser('~/projects/plantuml'), 'plantuml.jar'))
 print(plantuml)
 

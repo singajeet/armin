@@ -8,3 +8,5 @@ drivers
    armin_ext.drivers.package
    armin_ext.drivers.script
    armin_ext.drivers.source
+   armin_ext.template
+   armin_ext.installer

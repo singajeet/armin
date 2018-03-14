@@ -11,7 +11,7 @@ from armin.api.managers.base_manager import BaseDriverManager
 
 
 class SourceDriverManager(BaseDriverManager):
-    """DriverManager for managing source system related drivers. The drivers registered under namespace 'api.source_sys_driver
+    """DriverManager for managing source system related drivers.
     """
 
     __single_source_driver_mgr = None
@@ -24,13 +24,18 @@ class SourceDriverManager(BaseDriverManager):
         return cls.__single_source_driver_mgr
 
     def __init__(self):
-        """SourceDriverManager constructor to initialize the singleton instance
-        Below is an example of using this class:
+        """SourceDriverManager constructor to initialize the singleton instance of this class.
+
+        Example:
 
             >>> from armin.api.managers.source.manager import SourceDriverManager
             >>> mgr = SourceDriverManager()
             >>> mgr is not None
             True
+
+        Note:
+            As of now this class is not thread safe and is a singleton which will be shared among many objects.
+
         """
         super(SourceDriverManager, self).__init__()
 

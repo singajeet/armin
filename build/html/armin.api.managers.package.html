@@ -189,6 +189,12 @@
 <em class="property">class </em><code class="descclassname">armin.api.managers.package.interface.</code><code class="descname">AbstractPackage</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p><a class="reference internal" href="#armin.api.managers.package.interface.AbstractPackage" title="armin.api.managers.package.interface.AbstractPackage"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractPackage</span></code></a> class contains information about a package in the             Package Managment System. A package consist of one or more components             grouped logically together. If there is an dependency between components             and other packages, same will be defined in this class</p>
+<dl class="method">
+<dt id="armin.api.managers.package.interface.AbstractPackage.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor for an package</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="armin.api.managers.package.interface.AbstractPackage.category">
 <code class="descname">category</code><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.category" title="Permalink to this definition">¶</a></dt>
@@ -205,34 +211,48 @@
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_component">
 <code class="descname">get_component</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span> &#x2192; Type[Any]<a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.get_component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_component" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an instance of component if available in dict</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name (str): Name of the component which needs to be returned</dd>
-<dt>Returns:</dt>
-<dd>Instance of component if found else None</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of the component which needs to be returned</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Instance of component if found else None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_component_by_id">
 <code class="descname">get_component_by_id</code><span class="sig-paren">(</span><em>comp_id</em><span class="sig-paren">)</span> &#x2192; Type[Any]<a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.get_component_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_component_by_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as <a class="reference internal" href="#armin.api.managers.package.interface.AbstractPackage.get_component" title="armin.api.managers.package.interface.AbstractPackage.get_component"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_component()</span></code></a> but returns the component based on id</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>comp_id (uuid): The unique id assigned to an component</dd>
-<dt>Returns:</dt>
-<dd>An instance of component or None</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>comp_id</strong> (<em>uuid</em>) – The unique id assigned to an component</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An instance of component or None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_components">
 <code class="descname">get_components</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[Dict]<a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.get_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns instances of all components which are part of this package</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>components (Dict): Returns dict of components</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns dict of components</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">components (Dict)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -323,10 +343,16 @@
 <dt id="armin.api.managers.package.interface.AbstractPackage.list_components">
 <code class="descname">list_components</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[List]<a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.list_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.list_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list containing name of all components available in this package</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>comp_name_list ([str]): List of component names available in this package</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of component names available in this package</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">comp_name_list ([str])</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -345,11 +371,18 @@
 <dt id="armin.api.managers.package.interface.AbstractPackage.set_custom_meta">
 <code class="descname">set_custom_meta</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.set_custom_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_custom_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets an custom meta for the package</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>key (str): key for an custom meta item
-value (str): value of meta</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<em>str</em>) – key for an custom meta item</li>
+<li><strong>value</strong> (<em>str</em>) – value of meta</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -380,10 +413,14 @@ value (str): value of meta</dd>
 <dt id="armin.api.managers.package.interface.AbstractPackage.set_source_id">
 <code class="descname">set_source_id</code><span class="sig-paren">(</span><em>id: str</em><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="_modules/armin/api/managers/package/interface.html#AbstractPackage.set_source_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_source_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the identifier of source system from where this package will be sourced</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id (str): Unique id of the source system (i.e., source-driver)</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>str</em>) – Unique id of the source system (i.e., source-driver)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>

@@ -103,6 +103,10 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.package.html">armin_ext.drivers.package package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.script.html">armin_ext.drivers.script package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.source.html">armin_ext.drivers.source package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.template.html">armin_ext.template package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.installer.html">armin_ext.installer package</a></li>
 </ul>
 </li>
 </ul>
@@ -188,17 +192,34 @@
 <dd><p>Bases: <a class="reference internal" href="../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver" title="armin.api.managers.io.interface.AbstractDirDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractDirDriver</span></code></a></p>
 <p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code> but works on dirs instead</p>
 <dl class="method">
+<dt id="armin_ext.drivers.file.system.DirectoryDriver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em>, <em>create_new: bool = False</em>, <em>overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/file/system.html#DirectoryDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.file.system.DirectoryDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor for an directory</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin_ext.drivers.file.system.DirectoryDriver.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>destination: str</em>, <em>force: bool = False</em>, <em>create_path: bool = False</em><span class="sig-paren">)</span> &#x2192; Type[pathlib.Path]<a class="reference internal" href="../_modules/armin_ext/drivers/file/system.html#DirectoryDriver.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.file.system.DirectoryDriver.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy file to new location passed as param. If file already exists                 and force param is True, it will overwrite the destination                 file else will return with no operation.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>destination (str): The target location where file needs to be copied
-force (bool): If set to True, it will overwrite the file in                     destination
-create_path (bool): create the destination path if not exists</dd>
-<dt>Returns:</dt>
-<dd>file_path (pathlib.Path): Returns an instance of                     <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> if file copied else None</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>destination</strong> (<em>str</em>) – The target location where file needs to be copied</li>
+<li><strong>force</strong> (<em>bool</em>) – If set to True, it will overwrite the file in                     destination</li>
+<li><strong>create_path</strong> (<em>bool</em>) – create the destination path if not exists</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns an instance of                     <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> if file copied else None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">file_path (pathlib.Path)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -233,17 +254,34 @@ create_path (bool): create the destination path if not exists</dd>
 <dd><p>Bases: <a class="reference internal" href="../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractFileDriver" title="armin.api.managers.io.interface.AbstractFileDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractFileDriver</span></code></a></p>
 <p>Represents a file on file system. This class supports <a class="reference internal" href="#armin_ext.drivers.file.system.FileDriver.copy" title="armin_ext.drivers.file.system.FileDriver.copy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">copy()</span></code></a>             and <a class="reference internal" href="#armin_ext.drivers.file.system.FileDriver.move" title="armin_ext.drivers.file.system.FileDriver.move"><code class="xref py py-meth docutils literal notranslate"><span class="pre">move()</span></code></a> commands only and for all other operations use             <code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> or <code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> modules. There are two attributes             <code class="xref py py-attr docutils literal notranslate"><span class="pre">os</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">path</span></code> which provides access to both of the             above mentioned modules respectively</p>
 <dl class="method">
+<dt id="armin_ext.drivers.file.system.FileDriver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em>, <em>create_new: bool = False</em>, <em>base_path: str = None</em>, <em>overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/file/system.html#FileDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.file.system.FileDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor of an file</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="armin_ext.drivers.file.system.FileDriver.copy">
 <code class="descname">copy</code><span class="sig-paren">(</span><em>destination</em>, <em>force=False</em>, <em>create_path=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/file/system.html#FileDriver.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.file.system.FileDriver.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy file to new location passed as param. If file already exists and        force param is True, it will overwrite the destination file else will        return with no operation.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>destination (str): The target location where file needs to be copied
-force (bool): If set to True, it will overwrite the file in destination
-create_path (bool): create the destination path if not exists</dd>
-<dt>Returns:</dt>
-<dd>file_path (pathlib.Path): Returns an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>        if file copied else None</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>destination</strong> (<em>str</em>) – The target location where file needs to be copied</li>
+<li><strong>force</strong> (<em>bool</em>) – If set to True, it will overwrite the file in destination</li>
+<li><strong>create_path</strong> (<em>bool</em>) – create the destination path if not exists</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>        if file copied else None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">file_path (pathlib.Path)</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">

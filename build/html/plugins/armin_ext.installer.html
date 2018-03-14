@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>armin_ext.drivers.package package &mdash; Armin 0.0.1 documentation</title>
+  <title>armin_ext.installer package &mdash; Armin 0.0.1 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Armin 0.0.1 documentation" href="../index.html"/>
         <link rel="up" title="drivers" href="modules.html"/>
-        <link rel="next" title="armin_ext.drivers.script package" href="armin_ext.drivers.script.html"/>
-        <link rel="prev" title="armin_ext.drivers.file package" href="armin_ext.drivers.file.html"/> 
+        <link rel="next" title="armin.api.tests package" href="../armin.api.tests.html"/>
+        <link rel="prev" title="armin_ext.template package" href="armin_ext.template.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -98,15 +98,15 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../modules.html#built-in-plugins">Built-in Plugins</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="modules.html">drivers</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.file.html">armin_ext.drivers.file package</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">armin_ext.drivers.package package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#plugin-name-default-package-file-driver"><strong>Plugin Name</strong>: default-package-file-driver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-armin_ext.drivers.package.file">armin_ext.drivers.package.file module</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.package.html">armin_ext.drivers.package package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.script.html">armin_ext.drivers.script package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="armin_ext.drivers.source.html">armin_ext.drivers.source package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="armin_ext.template.html">armin_ext.template package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="armin_ext.installer.html">armin_ext.installer package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">armin_ext.installer package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plugin-name-default-installer"><strong>Plugin Name</strong>: default-installer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-armin_ext.installer.script">armin_ext.installer.script module</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -160,13 +160,13 @@
         
           <li><a href="modules.html">drivers</a> &raquo;</li>
         
-      <li>armin_ext.drivers.package package</li>
+      <li>armin_ext.installer package</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/plugins/armin_ext.drivers.package.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/plugins/armin_ext.installer.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -179,46 +179,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="armin-ext-drivers-package-package">
-<h1>armin_ext.drivers.package package<a class="headerlink" href="#armin-ext-drivers-package-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="plugin-name-default-package-file-driver">
-<h2><strong>Plugin Name</strong>: default-package-file-driver<a class="headerlink" href="#plugin-name-default-package-file-driver" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="armin-ext-installer-package">
+<h1>armin_ext.installer package<a class="headerlink" href="#armin-ext-installer-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plugin-name-default-installer">
+<h2><strong>Plugin Name</strong>: default-installer<a class="headerlink" href="#plugin-name-default-installer" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-armin_ext.drivers.package.file">
-<span id="armin-ext-drivers-package-file-module"></span><h2>armin_ext.drivers.package.file module<a class="headerlink" href="#module-armin_ext.drivers.package.file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-armin_ext.installer.script">
+<span id="armin-ext-installer-script-module"></span><h2>armin_ext.installer.script module<a class="headerlink" href="#module-armin_ext.installer.script" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-file"></span><dl class="class">
-<dt id="armin_ext.drivers.package.file.PackageFileDriver">
-<em class="property">class </em><code class="descclassname">armin_ext.drivers.package.file.</code><code class="descname">PackageFileDriver</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict], create_new: bool = False, base_path: Type[pathlib.Path] = None, overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/package/file.html#PackageFileDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.package.file.PackageFileDriver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractPackageFileDriver" title="armin.api.managers.io.interface.AbstractPackageFileDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractPackageFileDriver</span></code></a></p>
-<p>Represents a physical package file in the package management system.            This class supports 3 commands…</p>
-<ul class="simple">
-<li>copy</li>
-<li>move</li>
-<li>extract_to</li>
-</ul>
+<dt id="armin_ext.installer.script.ScriptFileDriver">
+<em class="property">class </em><code class="descclassname">armin_ext.installer.script.</code><code class="descname">ScriptFileDriver</code><span class="sig-paren">(</span><em>package_path: str, repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/installer/script.html#ScriptFileDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.installer.script.ScriptFileDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver" title="armin.api.managers.io.interface.AbstractScriptFileDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.io.interface.AbstractScriptFileDriver</span></code></a></p>
+<p>Represents a physical script file.</p>
 <dl class="method">
-<dt id="armin_ext.drivers.package.file.PackageFileDriver.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict], create_new: bool = False, base_path: Type[pathlib.Path] = None, overwrite: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/package/file.html#PackageFileDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.package.file.PackageFileDriver.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Default constructor of package file</p>
+<dt id="armin_ext.installer.script.ScriptFileDriver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>package_path: str, repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/installer/script.html#ScriptFileDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.installer.script.ScriptFileDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor of script file</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="armin_ext.drivers.package.file.PackageFileDriver.extract_to">
-<code class="descname">extract_to</code><span class="sig-paren">(</span><em>target_path</em>, <em>name_as_sub_folder=True</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/drivers/package/file.html#PackageFileDriver.extract_to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.drivers.package.file.PackageFileDriver.extract_to" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extract the contents of package to the specified path</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>target_path</strong> (<em>str</em>) – path to the lication where package needs to be extracted</li>
-<li><strong>name_as_sub_folder</strong> (<em>bool</em>) – creates a sub folder under target_path with the                    same name as package file name before extracting contents.                    Default value is True</li>
-<li><strong>overwrite</strong> (<em>bool</em>) – Overwrites the contents if already exists in target location</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<dt id="armin_ext.installer.script.ScriptFileDriver.execute_script">
+<code class="descname">execute_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/installer/script.html#ScriptFileDriver.execute_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.installer.script.ScriptFileDriver.execute_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the setup script and returns the results for same</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.installer.script.ScriptFileDriver.get_args_list_for_script">
+<code class="descname">get_args_list_for_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/installer/script.html#ScriptFileDriver.get_args_list_for_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.installer.script.ScriptFileDriver.get_args_list_for_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an list containing the args to be passed to setup script</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="armin_ext.installer.script.ScriptFileDriver.get_script_name">
+<code class="descname">get_script_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin_ext/installer/script.html#ScriptFileDriver.get_script_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin_ext.installer.script.ScriptFileDriver.get_script_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the script</p>
 </dd></dl>
 
 </dd></dl>
@@ -236,10 +230,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="armin_ext.drivers.script.html" class="btn btn-neutral float-right" title="armin_ext.drivers.script package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../armin.api.tests.html" class="btn btn-neutral float-right" title="armin.api.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="armin_ext.drivers.file.html" class="btn btn-neutral" title="armin_ext.drivers.file package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="armin_ext.template.html" class="btn btn-neutral" title="armin_ext.template package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
