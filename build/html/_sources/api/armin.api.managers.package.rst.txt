@@ -12,15 +12,6 @@ armin.api.managers.package.interface module
     :undoc-members:
     :show-inheritance:
 
-armin.api.managers.package.intro module
----------------------------------------
-
-.. automodule:: armin.api.managers.package.intro
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 Module contents
 ---------------
 

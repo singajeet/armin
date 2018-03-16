@@ -203,18 +203,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v_PC</span><span class="o">.</span><span class="n">SETUP_SECTION_KEY</span><span class="p">,</span> <span class="n">v_PC</span><span class="o">.</span><span class="n">ARG_LIST_FOR_SCRIPT_KEY</span><span class="p">))</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__allowed_setup_file_ext</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unknown setup file format. Only following formats are allowed </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__allowed_setup_file_ext</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span></div>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to find setup file in current package&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to find setup file in current package&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_script_name"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.get_script_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_script_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the name of the script</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_args_list_for_script"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.get_args_list_for_script">[docs]</a>    <span class="k">def</span> <span class="nf">get_args_list_for_script</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns an list containing the args to be passed to setup script</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span></div>
 
 <div class="viewcode-block" id="ScriptFileDriver.execute_script"><a class="viewcode-back" href="../../../plugins/armin_ext.installer.html#armin_ext.installer.script.ScriptFileDriver.execute_script">[docs]</a>    <span class="k">def</span> <span class="nf">execute_script</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Executes the setup script and returns the results for same</span>
@@ -222,8 +222,8 @@
         <span class="n">_process</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__args_list_for_script</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
         <span class="p">(</span><span class="n">_stdout</span><span class="p">,</span> <span class="n">_stderr</span><span class="p">)</span> <span class="o">=</span> <span class="n">_process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">_stderr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span> <span class="p">,</span><span class="s1">&#39;Error while executting setup script: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">_stderr</span><span class="p">)</span></div></div>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">_stdout</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span> <span class="p">,</span><span class="s1">&#39;Error while executting setup script: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">_stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">_stdout</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

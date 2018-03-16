@@ -195,8 +195,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__is_new</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__session</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__dict_input</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__expected_result_type</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">JSON</span></div>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__response</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__expected_result_type</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">JSON</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__response</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 <div class="viewcode-block" id="DefaultSourceDriver.connect_to_meta"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.connect_to_meta">[docs]</a>    <span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Connect to metadata database using the details provided as\</span>
@@ -214,8 +214,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">_record</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__is_new</span> <span class="o">=</span> <span class="kc">True</span></div>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__is_new</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DefaultSourceDriver.save"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves details about source system in meta repo</span>
@@ -243,8 +243,8 @@
                 <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Source system meta table not found in repo&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span></div>
-            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Can not save empty details&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Can not save empty details&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DefaultSourceDriver.update"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the details of source system in meta repo. \</span>
@@ -259,8 +259,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">details</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_details</span> <span class="o">=</span> <span class="n">details</span></div>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_details</span> <span class="o">=</span> <span class="n">details</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">__validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Validates the details dict to make sure all required attributes are\</span>
@@ -295,8 +295,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            status (F, str): Success or Failed and message in case of failure</span>
 
-<span class="sd">        &quot;&quot;&quot;</span></div>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__session</span> <span class="o">=</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Web</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span><span class="o">.</span><span class="n">SESSION</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__session</span> <span class="o">=</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Web</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span><span class="o">.</span><span class="n">SESSION</span></div>
 
 <div class="viewcode-block" id="DefaultSourceDriver.perform_task"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.perform_task">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">perform_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>\
                            <span class="n">expected_result_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">V</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">JSON</span><span class="p">)</span>\
@@ -325,8 +325,8 @@
         <span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session</span>\
                 <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_meta</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">URL</span><span class="p">),</span>
                      <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_input_dict</span><span class="p">())</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__response</span> <span class="o">=</span> <span class="n">response</span></div>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__response</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__response</span> <span class="o">=</span> <span class="n">response</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__response</span></div>
 
 <div class="viewcode-block" id="DefaultSourceDriver.get_output"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.source.html#armin_ext.drivers.source.source_driver.DefaultSourceDriver.get_output">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Any</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the output of the task performed on source</span>
@@ -366,8 +366,8 @@
                 <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
                     <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">_file_driver</span><span class="p">)</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;Server call was successful but unable to save</span><span class="se">\</span>
-<span class="s1">                    content locally&#39;</span><span class="p">)</span></div></div>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Unknown result type found&#39;</span><span class="p">)</span>
+<span class="s1">                    content locally&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Unknown result type found&#39;</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

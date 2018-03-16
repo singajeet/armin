@@ -184,8 +184,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finalizing Driver Manager...&#39;</span><span class="p">)</span>
 
-    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">teardown_mgr</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">manager</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">teardown_mgr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">manager</span></div>
 
 
 <div class="viewcode-block" id="source_driver_instance"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.source_driver_instance">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">)</span>
@@ -203,8 +203,8 @@
         <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
             <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_DefaultSourceDriver__session</span><span class="o">.</span><span class="n">close</span><span class="p">()))</span>
 
-    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">teardown_drv</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">teardown_drv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="test_source_driver_installed_count"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_source_driver_installed_count">[docs]</a><span class="k">def</span> <span class="nf">test_source_driver_installed_count</span><span class="p">():</span>
@@ -213,8 +213,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">drivers_list</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">drv</span> <span class="k">for</span> <span class="n">drv</span> <span class="ow">in</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">iter_entry_points</span><span class="p">(</span><span class="s1">&#39;source.drivers&#39;</span><span class="p">)</span>
-    <span class="p">]</span></div>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">drivers_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Source Drivers count should be 1 only&quot;</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">drivers_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Source Drivers count should be 1 only&quot;</span></div>
 
 
 <div class="viewcode-block" id="test_source_driver_name"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_source_driver_name">[docs]</a><span class="k">def</span> <span class="nf">test_source_driver_name</span><span class="p">():</span>
@@ -223,23 +223,23 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">drivers_list</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">drv</span> <span class="k">for</span> <span class="n">drv</span> <span class="ow">in</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">iter_entry_points</span><span class="p">(</span><span class="s1">&#39;source.drivers&#39;</span><span class="p">)</span>
-    <span class="p">]</span></div>
-    <span class="k">assert</span> <span class="n">drivers_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;default_driver&#39;</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">drivers_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;default_driver&#39;</span></div>
 
 
 <div class="viewcode-block" id="test_SourceDriverManager_init"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_SourceDriverManager_init">[docs]</a><span class="k">def</span> <span class="nf">test_SourceDriverManager_init</span><span class="p">(</span><span class="n">source_manager_instance</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Tests the SourceDriverManager() instance creation</span>
 
-<span class="sd">    &quot;&quot;&quot;</span></div>
-    <span class="k">assert</span> <span class="n">source_manager_instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">source_manager_instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="test_SourceDriverManager_load_driver"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_SourceDriverManager_load_driver">[docs]</a><span class="k">def</span> <span class="nf">test_SourceDriverManager_load_driver</span><span class="p">(</span><span class="n">source_manager_instance</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test method load_driver() of SourceDriverManager</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">source_manager_instance</span><span class="o">.</span><span class="n">load_driver</span><span class="p">()</span></div>
-    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">source_manager_instance</span><span class="o">.</span><span class="n">load_driver</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
 
 
 <div class="viewcode-block" id="test_SourceDriverManager_get_source_system_driver"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_SourceDriverManager_get_source_system_driver">[docs]</a><span class="k">def</span> <span class="nf">test_SourceDriverManager_get_source_system_driver</span><span class="p">(</span><span class="n">source_manager_instance</span><span class="p">):</span>
@@ -247,16 +247,16 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">source_manager_instance</span><span class="o">.</span><span class="n">get_source_system_driver</span><span class="p">()</span>
-    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
-    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_name</span> <span class="o">==</span> <span class="s1">&#39;default_driver&#39;</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_name</span> <span class="o">==</span> <span class="s1">&#39;default_driver&#39;</span></div>
 
 
 <div class="viewcode-block" id="test_DefaultSourceDriver_connect_to_meta"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_DefaultSourceDriver_connect_to_meta">[docs]</a><span class="k">def</span> <span class="nf">test_DefaultSourceDriver_connect_to_meta</span><span class="p">(</span><span class="n">source_driver_instance</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test method connect_to_meta of DefaultSourceDriver</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">source_driver_instance</span><span class="o">.</span><span class="n">connect_to_meta</span><span class="p">()</span></div>
-    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">source_driver_instance</span><span class="o">.</span><span class="n">connect_to_meta</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
 
 
 <div class="viewcode-block" id="test_DefaultSourceDriver_connect_and_list"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_DefaultSourceDriver_connect_and_list">[docs]</a><span class="k">def</span> <span class="nf">test_DefaultSourceDriver_connect_and_list</span><span class="p">(</span><span class="n">source_driver_instance</span><span class="p">):</span>
@@ -275,8 +275,8 @@
     <span class="n">temp_result</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span>\
             <span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">source_driver_instance</span><span class="o">.</span><span class="n">get_output</span><span class="p">()))</span>
     <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="o">=</span> <span class="n">temp_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">assert</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
-    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="nb">dict</span>
+    <span class="k">assert</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="nb">dict</span></div>
 
 
 <div class="viewcode-block" id="test_DefaultSourceDriver_connect_and_download"><a class="viewcode-back" href="../../../../../armin.api.tests.source_mgr.html#armin.api.tests.source_mgr.test_source_mgr.test_DefaultSourceDriver_connect_and_download">[docs]</a><span class="k">def</span> <span class="nf">test_DefaultSourceDriver_connect_and_download</span><span class="p">(</span><span class="n">source_driver_instance</span><span class="p">):</span>
@@ -301,8 +301,8 @@
             <span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">source_driver_instance</span><span class="o">.</span><span class="n">get_output</span><span class="p">()))</span>
     <span class="c1">#print(result)</span>
     <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">assert</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
-    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">AbstractFileDriver</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">status</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">AbstractFileDriver</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

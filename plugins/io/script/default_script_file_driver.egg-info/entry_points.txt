@@ -1,3 +1,0 @@
-[script.file.drivers]
-file = armin_ext.script.file:ScriptFileDriver
-

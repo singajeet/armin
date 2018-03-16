@@ -196,8 +196,8 @@
                                           <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">create_new</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">is_zipfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">full_path</span><span class="p">):</span></div>
-                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Not a valid zip file&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">is_zipfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">full_path</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Not a valid zip file&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="PackageFileDriver.extract_to"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.package.html#armin_ext.drivers.package.file.PackageFileDriver.extract_to">[docs]</a>    <span class="k">def</span> <span class="nf">extract_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_path</span><span class="p">,</span> <span class="n">name_as_sub_folder</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Extract the contents of package to the specified path</span>
@@ -232,8 +232,8 @@
                 <span class="n">zippedfile</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file_bytes</span><span class="p">)</span>
                 <span class="n">zippedfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">dest_path</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">dest_path</span>
-        <span class="k">else</span><span class="p">:</span></div></div>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid destination path specified&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid destination path specified&#39;</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

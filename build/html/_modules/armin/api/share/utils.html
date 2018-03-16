@@ -189,8 +189,8 @@
     <span class="k">if</span> <span class="n">__source_sys_meta_table</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Inconsistent meta repo. Can not find source</span><span class="se">\</span>
 <span class="s1">                system details table - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">meta_repo_details</span><span class="p">[</span><span class="n">N</span><span class="o">.</span><span class="n">META_TABLE</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span></div>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__source_sys_meta_table</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__source_sys_meta_table</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="connect_to_meta"><a class="viewcode-back" href="../../../../shared/armin.api.share.html#armin.api.share.utils.connect_to_meta">[docs]</a><span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="n">meta_repo_details</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="n">Any</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Connect to metadata database using the details provided asparameters in the constructor</span>
@@ -211,8 +211,8 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">result_obj</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">__record</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__record</span><span class="p">)</span></div>
-    <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Record not found in meta repo&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="n">__record</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="s1">&#39;Record not found in meta repo&#39;</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

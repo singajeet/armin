@@ -102,7 +102,6 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">armin.api.managers.package package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-armin.api.managers.package.interface">armin.api.managers.package.interface module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#armin-api-managers-package-intro-module">armin.api.managers.package.intro module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-armin.api.managers.package">Module contents</a></li>
 </ul>
 </li>
@@ -187,12 +186,12 @@
 <span id="armin-api-managers-package-interface-module"></span><h2>armin.api.managers.package.interface module<a class="headerlink" href="#module-armin.api.managers.package.interface" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-interface"></span><dl class="class">
 <dt id="armin.api.managers.package.interface.AbstractPackage">
-<em class="property">class </em><code class="descclassname">armin.api.managers.package.interface.</code><code class="descname">AbstractPackage</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p><a class="reference internal" href="#armin.api.managers.package.interface.AbstractPackage" title="armin.api.managers.package.interface.AbstractPackage"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractPackage</span></code></a> class contains information about a package in the             Package Managment System. A package consist of one or more components             grouped logically together. If there is an dependency between components             and other packages, same will be defined in this class</p>
+<em class="property">class </em><code class="descclassname">armin.api.managers.package.interface.</code><code class="descname">AbstractPackage</code><span class="sig-paren">(</span><em>name: str, repo_details: typing.Type[typing.Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p><a class="reference internal" href="#armin.api.managers.package.interface.AbstractPackage" title="armin.api.managers.package.interface.AbstractPackage"><code class="xref py py-class docutils literal"><span class="pre">AbstractPackage</span></code></a> class contains information about a package in the             Package Managment System. A package consist of one or more components             grouped logically together. If there is an dependency between components             and other packages, same will be defined in this class</p>
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str, repo_details: Type[Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str, repo_details: typing.Type[typing.Dict]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default constructor for an package</p>
 </dd></dl>
 
@@ -210,7 +209,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_component">
-<code class="descname">get_component</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span> &#x2192; Type[Any]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_component" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_component</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span> &#x2192; typing.Type[typing.Any]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_component"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_component" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an instance of component if available in dict</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -226,8 +225,8 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_component_by_id">
-<code class="descname">get_component_by_id</code><span class="sig-paren">(</span><em>comp_id</em><span class="sig-paren">)</span> &#x2192; Type[Any]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_component_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_component_by_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as <a class="reference internal" href="#armin.api.managers.package.interface.AbstractPackage.get_component" title="armin.api.managers.package.interface.AbstractPackage.get_component"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_component()</span></code></a> but returns the component based on id</p>
+<code class="descname">get_component_by_id</code><span class="sig-paren">(</span><em>comp_id</em><span class="sig-paren">)</span> &#x2192; typing.Type[typing.Any]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_component_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_component_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#armin.api.managers.package.interface.AbstractPackage.get_component" title="armin.api.managers.package.interface.AbstractPackage.get_component"><code class="xref py py-meth docutils literal"><span class="pre">get_component()</span></code></a> but returns the component based on id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -242,7 +241,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_components">
-<code class="descname">get_components</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[Dict]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_components" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_components</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[typing.Dict]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns instances of all components which are part of this package</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -258,7 +257,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_components_name_id_map">
-<code class="descname">get_components_name_id_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[Dict]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_components_name_id_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_components_name_id_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_components_name_id_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[typing.Dict]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_components_name_id_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_components_name_id_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an dict of name-to-id mapping of all components in this package</p>
 </dd></dl>
 
@@ -288,7 +287,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_meta">
-<code class="descname">get_meta</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span> &#x2192; Type[Any]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_meta" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_meta</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span> &#x2192; typing.Type[typing.Any]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns value of meta for which key is passed</p>
 </dd></dl>
 
@@ -300,13 +299,13 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_setup_config">
-<code class="descname">get_setup_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[configparser.ConfigParser]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_setup_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_setup_config" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_setup_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[configparser.ConfigParser]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_setup_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_setup_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns config instance for this package</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.get_setup_script_args">
-<code class="descname">get_setup_script_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[List]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_setup_script_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_setup_script_args" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_setup_script_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[typing.List]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.get_setup_script_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.get_setup_script_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of args that needs to be passed to setup script</p>
 </dd></dl>
 
@@ -342,7 +341,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.list_components">
-<code class="descname">list_components</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[List]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.list_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.list_components" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_components</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[typing.List]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.list_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.list_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list containing name of all components available in this package</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -394,25 +393,25 @@
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.set_fs_id">
-<code class="descname">set_fs_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_fs_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_fs_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_fs_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span> &#x2192; typing.Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_fs_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_fs_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the id of fs path id where pkg is installed</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.set_meta">
-<code class="descname">set_meta</code><span class="sig-paren">(</span><em>namespace: str = None</em>, <em>entry_point: Type[Dict] = None</em>, <em>description: str = None</em>, <em>crc: str = None</em>, <em>author: str = None</em>, <em>company: str = None</em>, <em>url: str = None</em><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_meta" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_meta</code><span class="sig-paren">(</span><em>namespace: str = None</em>, <em>entry_point: typing.Type[typing.Dict] = None</em>, <em>description: str = None</em>, <em>crc: str = None</em>, <em>author: str = None</em>, <em>company: str = None</em>, <em>url: str = None</em><span class="sig-paren">)</span> &#x2192; typing.Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets whole meta dict or key-value pair of meta. All params can’t be set blank</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.set_package_file_id">
-<code class="descname">set_package_file_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_package_file_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_package_file_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_package_file_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span> &#x2192; typing.Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_package_file_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_package_file_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the id of physical package file</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.package.interface.AbstractPackage.set_source_id">
-<code class="descname">set_source_id</code><span class="sig-paren">(</span><em>id: str</em><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_source_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_source_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_source_id</code><span class="sig-paren">(</span><em>id: str</em><span class="sig-paren">)</span> &#x2192; typing.Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/package/interface.html#AbstractPackage.set_source_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.interface.AbstractPackage.set_source_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the identifier of source system from where this package will be sourced</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -426,9 +425,6 @@
 
 </dd></dl>
 
-</div>
-<div class="section" id="armin-api-managers-package-intro-module">
-<h2>armin.api.managers.package.intro module<a class="headerlink" href="#armin-api-managers-package-intro-module" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-armin.api.managers.package">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-armin.api.managers.package" title="Permalink to this headline">¶</a></h2>
