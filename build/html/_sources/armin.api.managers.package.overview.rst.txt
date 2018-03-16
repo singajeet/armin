@@ -83,4 +83,6 @@ Components
     [Installer] --> [APIWrapper]
     [APIWrapper] ..> [APIPublisher]
 
+   center footer Components of an package
+
     @enduml

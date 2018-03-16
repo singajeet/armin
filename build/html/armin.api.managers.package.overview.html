@@ -223,52 +223,54 @@ components</td>
 </table>
 </div></blockquote>
 <p class="plantuml">
-<img src="_images/plantuml-dd31ef38de30b4379300e9c48ba9e45f6b129df6.png" alt="&#64;startuml
+<img src="_images/plantuml-0403419dd7e5e4ae591c6852959a7dcd6b9b2c7d.png" alt=" &#64;startuml
 
-() IExtractor - [Extractor]
-() IValidator - [Validator]
-() IRuntimeLocator - [RuntimeLocator]
-() IDependencyResolver - [DependencyResolver]
-() IBuildSystem - [BuildSystem]
-() IInstaller - [Installer]
-() IWrapper - [APIWrapper]
+ () IExtractor - [Extractor]
+ () IValidator - [Validator]
+ () IRuntimeLocator - [RuntimeLocator]
+ () IDependencyResolver - [DependencyResolver]
+ () IBuildSystem - [BuildSystem]
+ () IInstaller - [Installer]
+ () IWrapper - [APIWrapper]
 
-() HTTP
+ () HTTP
 
-node &quot;Armin&quot; {
-[Armin Runtime]
-[Package Manager]
-[FileSystem Manager]
-[Component Manager]
-[APIPublisher]
-[...]
-}
+ node &quot;Armin&quot; {
+ [Armin Runtime]
+ [Package Manager]
+ [FileSystem Manager]
+ [Component Manager]
+ [APIPublisher]
+ [...]
+ }
 
-database &quot;MetaRepo&quot; {
-frame &quot;Packages&quot; {
-[Package Meta]
-}
+ database &quot;MetaRepo&quot; {
+ frame &quot;Packages&quot; {
+ [Package Meta]
+ }
 
-frame &quot;FileSystem&quot; {
-[FileSystem Meta]
-}
-}
+ frame &quot;FileSystem&quot; {
+ [FileSystem Meta]
+ }
+ }
 
-[Extractor] --&gt; [Validator]
-[Validator] --&gt; [RuntimeLocator]
-[RuntimeLocator] ..&gt; [Armin Runtime]
-[RuntimeLocator] --&gt; [DependencyResolver]
-[DependencyResolver] ..&gt; HTTP
-[DependencyResolver] --&gt; [BuildSystem]
-[BuildSystem] --&gt; [Installer]
-[Installer] ..&gt; [FileSystem Manager]
-[FileSystem Manager] ..&gt; [FileSystem Meta]
-[Installer] ..&gt; [Package Manager]
-[Package Manager] ..&gt; [Package Meta]
-[Installer] --&gt; [APIWrapper]
-[APIWrapper] ..&gt; [APIPublisher]
+ [Extractor] --&gt; [Validator]
+ [Validator] --&gt; [RuntimeLocator]
+ [RuntimeLocator] ..&gt; [Armin Runtime]
+ [RuntimeLocator] --&gt; [DependencyResolver]
+ [DependencyResolver] ..&gt; HTTP
+ [DependencyResolver] --&gt; [BuildSystem]
+ [BuildSystem] --&gt; [Installer]
+ [Installer] ..&gt; [FileSystem Manager]
+ [FileSystem Manager] ..&gt; [FileSystem Meta]
+ [Installer] ..&gt; [Package Manager]
+ [Package Manager] ..&gt; [Package Meta]
+ [Installer] --&gt; [APIWrapper]
+ [APIWrapper] ..&gt; [APIPublisher]
 
-&#64;enduml" />
+center footer Components of an package
+
+ &#64;enduml" />
 </p>
 </div>
 </div>

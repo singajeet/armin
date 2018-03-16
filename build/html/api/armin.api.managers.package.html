@@ -102,7 +102,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">armin.api.managers.package package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-armin.api.managers.package.interface">armin.api.managers.package.interface module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-armin.api.managers.package.intro">armin.api.managers.package.intro module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#armin-api-managers-package-intro-module">armin.api.managers.package.intro module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-armin.api.managers.package">Module contents</a></li>
 </ul>
 </li>
@@ -427,111 +427,8 @@
 </dd></dl>
 
 </div>
-<div class="section" id="module-armin.api.managers.package.intro">
-<span id="armin-api-managers-package-intro-module"></span><h2>armin.api.managers.package.intro module<a class="headerlink" href="#module-armin.api.managers.package.intro" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-intro"></span><dl class="class">
-<dt id="armin.api.managers.package.intro.Intro">
-<em class="property">class </em><code class="descclassname">armin.api.managers.package.intro.</code><code class="descname">Intro</code><a class="reference internal" href="../_modules/armin/api/managers/package/intro.html#Intro"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.package.intro.Intro" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<blockquote>
-<div><p>Introduction to Package</p>
-<p>Concept of package is not of much difference as compared to other applications. Like any application or operating system (os) have packages, package manager (eg. pip, apt, yum, etc) and package source index, Armin also uses <cite>Package</cite> for maintaining its functionality. Package in <cite>Armin</cite> is not limited to one format / template and supports multiple different formats. To know more about it, go through the below provided sections.</p>
-<p>Components</p>
-<p>A package have the below given components and each one have its dedicated job to work with an given <cite>Package</cite>:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Component Name</th>
-<th class="head">Details</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Extractor</td>
-<td>This component extracts or explodes package on the file system. Since
-multiple type of packages are supported, so extractor should know how to
-extract content from the package and notify next component to proceed
-further.</td>
-</tr>
-<tr class="row-odd"><td>Validator</td>
-<td>The component validates the contents of package and compares it wth
-already configured package schemas</td>
-</tr>
-<tr class="row-even"><td>Runtime Locator</td>
-<td>This component search and locates the runtime which will be used by other
-components to resolve dependencies, build (if required), install and
-wraps the package so that it can be interfaced to <cite>Armin</cite> and other sub
--systems.</td>
-</tr>
-<tr class="row-odd"><td>Dependency Resolver</td>
-<td>As the name suggets, this component looks for the dependencies required
-by the current package, build and install same if required</td>
-</tr>
-<tr class="row-even"><td>Build System</td>
-<td>Builds the package locally if it is not already built. This component will
-not be used if package and its dependencies already exist pre-built</td>
-</tr>
-<tr class="row-odd"><td>Installer</td>
-<td>Installs the package as required</td>
-</tr>
-<tr class="row-even"><td>Wrapper</td>
-<td>Exposes an package through common API language making it useable for other
-components</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p class="plantuml">
-<img src="../_images/plantuml-b514e77b901c326be76394396dcb6bf0c221be61.png" alt="&#64;startuml
-
-() IExtractor - [Extractor]
-() IValidator - [Validator]
-() IRuntimeLocator - [RuntimeLocator]
-() IDependencyResolver - [DependencyResolver]
-() IBuildSystem - [BuildSystem]
-() IInstaller - [Installer]
-() IWrapper - [APIWrapper]
-
-() HTTP
-
-node &quot;Armin&quot; {
-[Armin Runtime]
-[Package Manager]
-[FileSystem Manager]
-[Component Manager]
-[APIPublisher]
-[...]
-}
-
-database &quot;MetaRepo&quot; {
-frame &quot;Packages&quot; {
-[Package Meta]
-}
-
-frame &quot;FileSystem&quot; {
-[FileSystem Meta]
-}
-}
-
-[Extractor] --&gt; [Validator]
-[Validator] --&gt; [RuntimeLocator]
-[RuntimeLocator] ..&gt; [Armin Runtime]
-[RuntimeLocator] --&gt; [DependencyResolver]
-[DependencyResolver] ..&gt; HTTP
-[DependencyResolver] --&gt; [BuildSystem]
-[BuildSystem] --&gt; [Installer]
-[Installer] ..&gt; [FileSystem Manager]
-[FileSystem Manager] ..&gt; [FileSystem Meta]
-[Installer] ..&gt; [Package Manager]
-[Package Manager] ..&gt; [Package Meta]
-[Installer] --&gt; [APIWrapper]
-[APIWrapper] ..&gt; [APIPublisher]
-&#64;enduml" />
-</p>
-</dd></dl>
-
+<div class="section" id="armin-api-managers-package-intro-module">
+<h2>armin.api.managers.package.intro module<a class="headerlink" href="#armin-api-managers-package-intro-module" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-armin.api.managers.package">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-armin.api.managers.package" title="Permalink to this headline">¶</a></h2>
