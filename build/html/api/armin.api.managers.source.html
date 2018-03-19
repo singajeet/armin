@@ -188,10 +188,10 @@
 <span id="armin-api-managers-source-context-module"></span><h2>armin.api.managers.source.context module<a class="headerlink" href="#module-armin.api.managers.source.context" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-context"></span><dl class="function">
 <dt id="armin.api.managers.source.context.source_driver">
-<code class="descclassname">armin.api.managers.source.context.</code><code class="descname">source_driver</code><span class="sig-paren">(</span><em>loop: typing.Any</em>, <em>url: str = None</em>, <em>inputs: typing.Type[typing.Dict] = None</em>, <em>task: str = None</em>, <em>expected_result_type: typing.Type[armin.api.share.constants.V] = 'JSON'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/context.html#source_driver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.context.source_driver" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">armin.api.managers.source.context.</code><code class="descname">source_driver</code><span class="sig-paren">(</span><em>loop: Any</em>, <em>url: str = None</em>, <em>inputs: Type[Dict] = None</em>, <em>task: str = None</em>, <em>expected_result_type: Type[armin.api.share.constants.V] = 'JSON'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/context.html#source_driver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.context.source_driver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to connect, execute task, download result and cleanup connection to source system using context manager</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">armin.api.managers.source</span> <span class="k">import</span> <span class="n">web</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">armin.api.managers.source</span> <span class="k">import</span> <span class="n">web</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">armin.api.share.constants</span> <span class="k">import</span> <span class="n">V</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://&lt;url to source&gt;&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;download&#39;</span>
@@ -228,12 +228,12 @@
 <span id="armin-api-managers-source-interface-module"></span><h2>armin.api.managers.source.interface module<a class="headerlink" href="#module-armin.api.managers.source.interface" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-interface"></span><dl class="class">
 <dt id="armin.api.managers.source.interface.AbstractSourceDriver">
-<em class="property">class </em><code class="descclassname">armin.api.managers.source.interface.</code><code class="descname">AbstractSourceDriver</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: typing.Type[typing.Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver" title="armin.api.managers.base_interface.AbstractDriver"><code class="xref py py-class docutils literal"><span class="pre">armin.api.managers.base_interface.AbstractDriver</span></code></a></p>
+<em class="property">class </em><code class="descclassname">armin.api.managers.source.interface.</code><code class="descname">AbstractSourceDriver</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_interface.AbstractDriver" title="armin.api.managers.base_interface.AbstractDriver"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.base_interface.AbstractDriver</span></code></a></p>
 <p>An base class for an source system</p>
 <dl class="method">
 <dt id="armin.api.managers.source.interface.AbstractSourceDriver.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: typing.Type[typing.Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name: str</em>, <em>repo_details: Type[Dict] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor for abstract source driver class
 :param name: Name of the source system
 :type name: str
@@ -329,7 +329,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.source.interface.AbstractSourceDriver.perform_task">
-<code class="descname">perform_task</code><span class="sig-paren">(</span><em>task: str = None</em>, <em>expected_result_type: typing.Type[armin.api.share.constants.V] = 'JSON'</em><span class="sig-paren">)</span> &#x2192; typing.Type[_asyncio.Future]<a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.perform_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.perform_task" title="Permalink to this definition">¶</a></dt>
+<code class="descname">perform_task</code><span class="sig-paren">(</span><em>task: str = None</em>, <em>expected_result_type: Type[armin.api.share.constants.V] = 'JSON'</em><span class="sig-paren">)</span> &#x2192; Type[_asyncio.Future]<a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.perform_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.perform_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Signals source system to perform an task. Task name should                 be passed to this function as parameter</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -359,7 +359,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>loop</strong> (<em>EventLoop</em>) – <code class="xref py py-class docutils literal"><span class="pre">asyncio</span></code>.loop which will be used to run                    coroutines</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>loop</strong> (<em>EventLoop</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio</span></code>.loop which will be used to run                    coroutines</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True or False</td>
 </tr>
@@ -371,7 +371,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.source.interface.AbstractSourceDriver.put_input">
-<code class="descname">put_input</code><span class="sig-paren">(</span><em>input_details: typing.Type[typing.Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.put_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.put_input" title="Permalink to this definition">¶</a></dt>
+<code class="descname">put_input</code><span class="sig-paren">(</span><em>input_details: Type[Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.put_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.put_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prepares the input for source system</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -419,7 +419,7 @@
 
 <dl class="method">
 <dt id="armin.api.managers.source.interface.AbstractSourceDriver.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>details: typing.Type[typing.Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.update" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update</code><span class="sig-paren">(</span><em>details: Type[Dict] = None) -&gt; (typing.Type[armin.api.share.constants.F], &lt;class 'str'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/interface.html#AbstractSourceDriver.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.interface.AbstractSourceDriver.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update details of source in meta repo</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -443,14 +443,14 @@
 <span class="target" id="module-manager"></span><dl class="class">
 <dt id="armin.api.managers.source.manager.SourceDriverManager">
 <em class="property">class </em><code class="descclassname">armin.api.managers.source.manager.</code><code class="descname">SourceDriverManager</code><a class="reference internal" href="../_modules/armin/api/managers/source/manager.html#SourceDriverManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.manager.SourceDriverManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager" title="armin.api.managers.base_manager.BaseDriverManager"><code class="xref py py-class docutils literal"><span class="pre">armin.api.managers.base_manager.BaseDriverManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="armin.api.managers.html#armin.api.managers.base_manager.BaseDriverManager" title="armin.api.managers.base_manager.BaseDriverManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">armin.api.managers.base_manager.BaseDriverManager</span></code></a></p>
 <p>DriverManager for managing source system related drivers.</p>
 <dl class="method">
 <dt id="armin.api.managers.source.manager.SourceDriverManager.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/armin/api/managers/source/manager.html#SourceDriverManager.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.manager.SourceDriverManager.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>SourceDriverManager constructor to initialize the singleton instance of this class.</p>
 <p class="rubric">Example</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">armin.api.managers.source.manager</span> <span class="k">import</span> <span class="n">SourceDriverManager</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">armin.api.managers.source.manager</span> <span class="k">import</span> <span class="n">SourceDriverManager</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="o">=</span> <span class="n">SourceDriverManager</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mgr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 <span class="go">True</span>
@@ -464,8 +464,19 @@
 
 <dl class="method">
 <dt id="armin.api.managers.source.manager.SourceDriverManager.get_invoke_args">
-<code class="descname">get_invoke_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[typing.Tuple]<a class="reference internal" href="../_modules/armin/api/managers/source/manager.html#SourceDriverManager.get_invoke_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.manager.SourceDriverManager.get_invoke_args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">get_invoke_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[Tuple]<a class="reference internal" href="../_modules/armin/api/managers/source/manager.html#SourceDriverManager.get_invoke_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.manager.SourceDriverManager.get_invoke_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an tuple of args that needs to be passed to driver        while invoking it. Thus should be overridden by derived class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Tuple of args that needs to be passed        the driver</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">invoke_args (Tuple)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="armin.api.managers.source.manager.SourceDriverManager.get_source_system_driver">
@@ -475,8 +486,9 @@
 
 <dl class="method">
 <dt id="armin.api.managers.source.manager.SourceDriverManager.load_configuration">
-<code class="descname">load_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; typing.Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/source/manager.html#SourceDriverManager.load_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.manager.SourceDriverManager.load_configuration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">load_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Type[armin.api.share.constants.F]<a class="reference internal" href="../_modules/armin/api/managers/source/manager.html#SourceDriverManager.load_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#armin.api.managers.source.manager.SourceDriverManager.load_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load configuration for current manager. This should be overridden        by derived classes</p>
+</dd></dl>
 
 </dd></dl>
 

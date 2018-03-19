@@ -190,33 +190,33 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_allowed_setup_file_ext</span> <span class="o">=</span> <span class="n">v_PC</span><span class="o">.</span><span class="n">ALLOWED_SCRIPT_EXT</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allowed_setup_file_ext</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unknown setup file format. Only following formats are allowed </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allowed_setup_file_ext</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">create_new</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to find script file&#39;</span><span class="p">)</span></div>
+        <span class="k">if</span> <span class="n">create_new</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span></div>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to find script file&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_script_path"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_script_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_script_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns the name of the script</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_path</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_path</span>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_args_list_for_script"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_args_list_for_script">[docs]</a>    <span class="k">def</span> <span class="nf">get_args_list_for_script</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns an list containing the args to be passed to setup script</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_args_list_for_script</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_args_list_for_script</span>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_stdout_pipe"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_stdout_pipe">[docs]</a>    <span class="k">def</span> <span class="nf">get_stdout_pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of std out pipe</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_out_pipe</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_out_pipe</span>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_stderr_pipe"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_stderr_pipe">[docs]</a>    <span class="k">def</span> <span class="nf">get_stderr_pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of std err pipe</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span>
 
 <div class="viewcode-block" id="ScriptFileDriver.get_process_instance"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.get_process_instance">[docs]</a>    <span class="k">def</span> <span class="nf">get_process_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of process used to execute script</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span>
 
 <div class="viewcode-block" id="ScriptFileDriver.execute_script"><a class="viewcode-back" href="../../../../plugins/armin_ext.drivers.script.html#armin_ext.drivers.script.file.ScriptFileDriver.execute_script">[docs]</a>    <span class="k">def</span> <span class="nf">execute_script</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Executes the setup script and returns the results for same</span>
@@ -229,8 +229,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">full_path</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_std_out_pipe</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span> <span class="p">,</span><span class="s1">&#39;Error while executting script: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_out_pipe</span><span class="p">)</span></div></div>
+            <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">FAILED</span> <span class="p">,</span><span class="s1">&#39;Error while executting script: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_err_pipe</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_std_out_pipe</span><span class="p">)</span>
 </pre></div>
 
            </div>

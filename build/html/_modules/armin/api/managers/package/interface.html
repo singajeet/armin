@@ -213,8 +213,8 @@
             <span class="n">N</span><span class="o">.</span><span class="n">COMPANY</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">N</span><span class="o">.</span><span class="n">VERSION</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
         <span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">connect_to_meta</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_temp_workspace</span><span class="p">()</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect_to_meta</span><span class="p">()</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_temp_workspace</span><span class="p">()</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">category</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -258,14 +258,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_source_id</span> <span class="o">=</span> <span class="nb">id</span>
-            <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
-        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">FAILED</span></div>
+            <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">FAILED</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_source_id"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_source_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_source_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns the id of source system</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source_id</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source_id</span>
 
 <div class="viewcode-block" id="AbstractPackage.set_package_file_id"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_package_file_id">[docs]</a>    <span class="k">def</span> <span class="nf">set_package_file_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Sets the id of physical package file</span>
@@ -273,14 +273,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_package_file_id</span> <span class="o">=</span> <span class="nb">id</span>
-            <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
-        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">FAILED</span></div>
+            <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">FAILED</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_package_file_id"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_package_file_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_package_file_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns id of physical file</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_package_file_id</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_package_file_id</span>
 
 <div class="viewcode-block" id="AbstractPackage.set_fs_id"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_fs_id">[docs]</a>    <span class="k">def</span> <span class="nf">set_fs_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Sets the id of fs path id where pkg is installed</span>
@@ -288,57 +288,57 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_fs_id</span> <span class="o">=</span> <span class="nb">id</span>
-            <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span>
-        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">FAILED</span></div>
+            <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">SUCCESS</span></div>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">FAILED</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_fs_id"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_fs_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_fs_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns id of fs path where package is installed</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fs_id</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fs_id</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_setup_config"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_setup_config">[docs]</a>    <span class="k">def</span> <span class="nf">get_setup_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">ConfigParser</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns config instance for this package</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_setup_script_args"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_setup_script_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_setup_script_args</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">List</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns a list of args that needs to be passed to setup script</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_setup_script_path"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_setup_script_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_setup_script_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns path to the setup script for this package</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.save"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the data available in local meta to the meta repository</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.remove"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hard</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Removes the package from the meta repo. If &quot;hard&quot; arg is true,\</span>
 <span class="sd">        it will removes the meta from repo as well as the files from the file system</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.set_meta"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entry_point</span><span class="p">:</span><span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">crc</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">company</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Sets whole meta dict or key-value pair of meta. All params can&#39;t be set blank</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_meta"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns value of meta for which key is passed</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.set_custom_meta"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_custom_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_custom_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets an custom meta for the package</span>
@@ -348,34 +348,34 @@
 <span class="sd">            value (str): value of meta</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">Validator</span><span class="p">()</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">)</span><span class="o">.</span><span class="n">not_empty</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
+        <span class="k">if</span> <span class="n">Validator</span><span class="p">()</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">)</span><span class="o">.</span><span class="n">not_empty</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_custom_meta"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_custom_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_custom_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns custom meta value if available</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">Validator</span><span class="p">()</span><span class="o">.</span><span class="n">not_empty</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractPackage.set_dependency"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.set_dependency">[docs]</a>    <span class="k">def</span> <span class="nf">set_dependency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">package</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set current packages dependency on the package passed as args</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_dependencies"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_dependencies">[docs]</a>    <span class="k">def</span> <span class="nf">get_dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns an dict of dependencies for current package</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.connect_to_meta"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.connect_to_meta">[docs]</a>    <span class="k">def</span> <span class="nf">connect_to_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Connect to meta repo</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">_prepare_temp_workspace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prepares an temp workspace dir to be used by this package</span>
@@ -386,14 +386,14 @@
 <div class="viewcode-block" id="AbstractPackage.get_installer"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_installer">[docs]</a>    <span class="k">def</span> <span class="nf">get_installer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns installer of current package</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.install_meta"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.install_meta">[docs]</a>    <span class="k">def</span> <span class="nf">install_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Install package meta to the system. Will be called by installer</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractPackage.list_components"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.list_components">[docs]</a>    <span class="k">def</span> <span class="nf">list_components</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">List</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns a list containing name of all components available in this package</span>
@@ -401,8 +401,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            comp_name_list ([str]): List of component names available in this package</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_components"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_components">[docs]</a>    <span class="k">def</span> <span class="nf">get_components</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns instances of all components which are part of this package</span>
@@ -412,8 +412,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_component"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_component">[docs]</a>    <span class="k">def</span> <span class="nf">get_component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of component if available in dict</span>
@@ -427,8 +427,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_component_by_id"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_component_by_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_component_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">comp_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Same as :meth:`get_component` but returns the component based on id</span>
@@ -443,8 +443,8 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">comp_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">comp_obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">comp_obj</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">comp_id</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="n">comp_obj</span>
-            <span class="k">return</span> <span class="kc">None</span></div>
+                    <span class="k">return</span> <span class="n">comp_obj</span></div>
+            <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractPackage.get_components_name_id_map"><a class="viewcode-back" href="../../../../../api/armin.api.managers.package.html#armin.api.managers.package.interface.AbstractPackage.get_components_name_id_map">[docs]</a>    <span class="k">def</span> <span class="nf">get_components_name_id_map</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns an dict of name-to-id mapping of all components in this package</span>
@@ -452,8 +452,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_map</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">comp_obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp_obj</span><span class="o">.</span><span class="n">id</span>
-        <span class="k">return</span> <span class="n">_map</span></div></div>
+            <span class="n">_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">comp_obj</span><span class="o">.</span><span class="n">id</span></div></div>
+        <span class="k">return</span> <span class="n">_map</span>
 
 </pre></div>
 

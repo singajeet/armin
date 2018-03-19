@@ -195,8 +195,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_os_release</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_os_version</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_os_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name_on_network</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_os_release</span><span class="p">,</span>
-         <span class="bp">self</span><span class="o">.</span><span class="n">_os_version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span></div>
+        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_os_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name_on_network</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_os_release</span><span class="p">,</span></div>
+         <span class="bp">self</span><span class="o">.</span><span class="n">_os_version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_machine_name</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -206,8 +206,8 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
 
     <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">validFileName</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">initCap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">validFileName</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">initCap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="AbstractDirDriver"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver">[docs]</a><span class="k">class</span> <span class="nc">AbstractDirDriver</span><span class="p">(</span><span class="n">AbstractIODriver</span><span class="p">):</span>
@@ -231,14 +231,14 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">AbstractDirDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__create_new_flag</span> <span class="o">=</span> <span class="n">create_new</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_overwrite</span> <span class="o">=</span> <span class="n">overwrite</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_exists</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_exists</span> <span class="o">=</span> <span class="kc">False</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="AbstractDirDriver.get_handle"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.get_handle">[docs]</a>    <span class="k">def</span> <span class="nf">get_handle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns handle to file or directory to perform other IO operations</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -291,8 +291,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span>
-                                  <span class="s1">&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+                                  <span class="s1">&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractDirDriver.move"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.move">[docs]</a>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_path</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Moves the dir to the destination. Please see :meth:`copy` \</span>
@@ -300,8 +300,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span>
-                                  <span class="s1">&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+                                  <span class="s1">&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractDirDriver.list_all"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.list_all">[docs]</a>    <span class="k">def</span> <span class="nf">list_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return all files and folders available under current directory</span>
@@ -311,8 +311,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span>
-                                  <span class="s1">&#39;t be</span><span class="se">\</span>
-<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span></div>
+                                  <span class="s1">&#39;t be</span><span class="se">\</span></div>
+<span class="s1">                                  called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractDirDriver.list_files"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.list_files">[docs]</a>    <span class="k">def</span> <span class="nf">list_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Returns an list of files in current directory. If pattern is not\</span>
@@ -323,8 +323,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span>
-                                  <span class="s1">&#39;t</span><span class="se">\</span>
-<span class="s1">                                  be called from instance variable&#39;</span><span class="p">)</span></div>
+                                  <span class="s1">&#39;t</span><span class="se">\</span></div>
+<span class="s1">                                  be called from instance variable&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractDirDriver.list_directories"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractDirDriver.list_directories">[docs]</a>    <span class="k">def</span> <span class="nf">list_directories</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                          <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]]:</span>
@@ -336,8 +336,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This is an abstract method and can&#39;</span>
-                                  <span class="s1">&#39;t</span><span class="se">\</span>
-<span class="s1">                                  be called from instance variable&#39;</span><span class="p">)</span></div></div>
+                                  <span class="s1">&#39;t</span><span class="se">\</span></div></div>
+<span class="s1">                                  be called from instance variable&#39;</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="AbstractFileDriver"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractFileDriver">[docs]</a><span class="k">class</span> <span class="nc">AbstractFileDriver</span><span class="p">(</span><span class="n">AbstractDirDriver</span><span class="p">):</span>
@@ -359,8 +359,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_base_path</span> <span class="o">=</span> <span class="n">base_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_base_name</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ext</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base_name</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ext</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -456,8 +456,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span></div>
+            <span class="k">return</span> <span class="kc">False</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_full_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="AbstractPackageFileDriver"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractPackageFileDriver">[docs]</a><span class="k">class</span> <span class="nc">AbstractPackageFileDriver</span><span class="p">(</span><span class="n">AbstractFileDriver</span><span class="p">):</span>
@@ -474,8 +474,8 @@
         <span class="sd">&quot;&quot;&quot;Default constructor of an package file</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">AbstractPackageFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AbstractPackageFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span></div>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AbstractPackageFileDriver.extract_to"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractPackageFileDriver.extract_to">[docs]</a>    <span class="k">def</span> <span class="nf">extract_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                    <span class="n">target_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -489,8 +489,8 @@
 <span class="sd">                    same name as package file name before extracting contents. Default value is True</span>
 <span class="sd">            overwrite (bool): Overwrites the contents if already exists in target location</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div></div>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+        <span class="k">pass</span>
 
 
 <div class="viewcode-block" id="AbstractScriptFileDriver"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver">[docs]</a><span class="k">class</span> <span class="nc">AbstractScriptFileDriver</span><span class="p">(</span><span class="n">AbstractFileDriver</span><span class="p">):</span>
@@ -509,44 +509,44 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">AbstractScriptFileDriver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_args_list_for_script</span> <span class="o">=</span> <span class="n">arg_list</span></div>
+            <span class="n">name</span><span class="p">,</span> <span class="n">repo_details</span><span class="p">,</span> <span class="n">create_new</span><span class="p">,</span> <span class="n">base_path</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_args_list_for_script</span> <span class="o">=</span> <span class="n">arg_list</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.get_script_path"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_script_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_script_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns the script name on the file system</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_path</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_path</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.get_args_list_for_script"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_args_list_for_script">[docs]</a>    <span class="k">def</span> <span class="nf">get_args_list_for_script</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">List</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Returns an list of arguments that needs to be passed to script for execution</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.get_stdout_pipe"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_stdout_pipe">[docs]</a>    <span class="k">def</span> <span class="nf">get_stdout_pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of process Pipe for stdout</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.get_stderr_pipe"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_stderr_pipe">[docs]</a>    <span class="k">def</span> <span class="nf">get_stderr_pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of process Pipe for stderr</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.get_process_instance"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.get_process_instance">[docs]</a>    <span class="k">def</span> <span class="nf">get_process_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an instance of process that will be execute the script</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">pass</span>
 
 <div class="viewcode-block" id="AbstractScriptFileDriver.execute_script"><a class="viewcode-back" href="../../../../../api/armin.api.managers.io.html#armin.api.managers.io.interface.AbstractScriptFileDriver.execute_script">[docs]</a>    <span class="k">def</span> <span class="nf">execute_script</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">[</span><span class="n">F</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Executes the script along with the parameters provided in setup conf</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div></div>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+        <span class="k">pass</span>
 </pre></div>
 
            </div>
